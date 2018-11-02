@@ -4,7 +4,7 @@
     <string name="more_info_button">More info about sticker pack</string>
     <string name="add_to_whatsapp">Add to WhatsApp</string>
     <string name="add_button_content_description">Add sticker pack to WhatsApp</string>
-    <string name="title_activity_sticker_packs_list">AE Sticker Packs</string>
+    <string name="title_activity_sticker_packs_list">Sticker Packs</string>
     <string name="dot">•</string>
     <string name="title_activity_sticker_pack_details_single_pack">Sticker Pack</string>
     <string name="title_activity_sticker_pack_details_multiple_pack">Sticker details</string>
