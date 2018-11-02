@@ -18,8 +18,6 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.TextView;
 
-import com.ae.apps.stickerapp.StickerPack;
-import com.example.samplestickerapp.R;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
 import java.lang.ref.WeakReference;

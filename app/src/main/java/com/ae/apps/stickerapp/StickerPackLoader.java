@@ -14,10 +14,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 
-import com.ae.apps.stickerapp.models.Sticker;
-import com.ae.apps.stickerapp.models.StickerPack;
-import com.example.samplestickerapp.BuildConfig;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;

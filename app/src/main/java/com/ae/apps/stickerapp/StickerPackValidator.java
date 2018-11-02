@@ -14,8 +14,6 @@ import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
-import com.ae.apps.stickerapp.models.Sticker;
-import com.ae.apps.stickerapp.models.StickerPack;
 import com.facebook.animated.webp.WebPImage;
 
 import java.io.IOException;

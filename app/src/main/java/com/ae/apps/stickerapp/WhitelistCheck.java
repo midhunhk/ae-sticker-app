@@ -16,8 +16,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 
-import com.example.samplestickerapp.BuildConfig;
-
 @SuppressWarnings("FieldCanBeLocal")
 public class WhitelistCheck {
     private static final String AUTHORITY_QUERY_PARAM = "authority";

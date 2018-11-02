@@ -27,10 +27,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ae.apps.stickerapp.StickerPack;
-import com.example.samplestickerapp.BuildConfig;
-import com.example.samplestickerapp.R;
-
 import java.lang.ref.WeakReference;
 
 public class StickerPackDetailsActivity extends BaseActivity {

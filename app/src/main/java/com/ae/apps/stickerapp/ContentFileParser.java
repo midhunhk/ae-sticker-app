@@ -12,9 +12,6 @@ import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.JsonReader;
 
-import com.ae.apps.stickerapp.models.Sticker;
-import com.ae.apps.stickerapp.models.StickerPack;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;

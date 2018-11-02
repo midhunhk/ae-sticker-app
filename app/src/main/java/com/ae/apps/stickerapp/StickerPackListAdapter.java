@@ -20,8 +20,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.ae.apps.stickerapp.StickerPack;
-import com.example.samplestickerapp.R;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;

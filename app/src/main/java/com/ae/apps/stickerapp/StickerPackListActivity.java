@@ -19,10 +19,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.ae.apps.stickerapp.StickerPack;
-import com.example.samplestickerapp.BuildConfig;
-import com.example.samplestickerapp.R;
-
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;

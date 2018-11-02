@@ -22,8 +22,6 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.example.samplestickerapp.BuildConfig;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
