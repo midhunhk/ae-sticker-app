@@ -6,5 +6,5 @@
     <color name="inactiveAddButtonColor">#B3B3B3</color>
     <color name="infoPageBackgroundColor">#EBEBEB</color>
     <color name="actionBarArrowColor">@color/colorAccent</color>
-
+    <color name="color_white">#FFFFFF</color>
 </resources>
