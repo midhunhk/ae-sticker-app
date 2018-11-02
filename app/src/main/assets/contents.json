@@ -28,6 +28,47 @@
           ]
         }
       ]
+    },
+    {
+      "identifier": "2",
+      "name": "Halloween Pumkins",
+      "publisher": "ae app labs",
+      "tray_image_file": "00_tray_icon.png",
+      "publisher_email":"aeapplabs.ca@gmail.com",
+      "publisher_website": "",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "01_pumkin.webp",
+          "emojis": ["☕","🙂"]
+        },
+        {
+          "image_file": "02_pumkin.webp",
+          "emojis": ["😄","😀"]
+        },
+        {
+          "image_file": "03_pumkin.webp",
+          "emojis": [
+            "😆",
+            "😂"
+          ]
+        },
+        {
+          "image_file": "04_pumkin.webp",
+          "emojis": [
+            "😆",
+            "😂"
+          ]
+        },
+        {
+          "image_file": "05_pumkin.webp",
+          "emojis": [
+            "😆",
+            "😂"
+          ]
+        }
+      ]
     }
   ]
 }
