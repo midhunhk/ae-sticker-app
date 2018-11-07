@@ -46,7 +46,7 @@ public class StickerPackListActivity extends BaseActivity {
         stickerPackList = getIntent().getParcelableArrayListExtra(EXTRA_STICKER_PACK_LIST_DATA);
         showStickerPackList(stickerPackList);
 
-        MobileAds.initialize(this, getString(R.string.google_admob_sample_app_id) );
+        MobileAds.initialize(this, getString(R.string.google_admob_app_id) );
 
         // https://developers.google.com/admob/android/banner
         AdView mAdView = findViewById(R.id.adView);
