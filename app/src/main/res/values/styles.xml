@@ -9,7 +9,7 @@
         <item name="actionBarTheme">@style/MyApp.ActionBarTheme</item>
     </style>
 
-    <style name="MyApp.ActionBarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+    <style name="MyApp.ActionBarTheme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:background">@color/colorPrimary</item>
         <item name="colorControlNormal">@color/actionBarArrowColor</item>
     </style>

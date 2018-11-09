@@ -22,17 +22,14 @@
         },
         {
           "image_file": "03_wyvern.webp",
-          "emojis": [
-            "😆",
-            "😂"
-          ]
+          "emojis": ["😆", "😂"]
         }
       ]
     },
     {
       "identifier": "2",
-      "name": "Halloween Pumkins",
-      "publisher": "ae app labs",
+      "name": "Halloween Pumpkins",
+      "publisher": "ae designs",
       "tray_image_file": "00_tray_icon.png",
       "publisher_email":"aeapplabs.ca@gmail.com",
       "publisher_website": "",
@@ -49,24 +46,15 @@
         },
         {
           "image_file": "03_pumkin.webp",
-          "emojis": [
-            "😆",
-            "😂"
-          ]
+          "emojis": ["😆", "😂"]
         },
         {
           "image_file": "04_pumkin.webp",
-          "emojis": [
-            "😆",
-            "😂"
-          ]
+          "emojis": ["😆", "😂"]
         },
         {
           "image_file": "05_pumkin.webp",
-          "emojis": [
-            "😆",
-            "😂"
-          ]
+          "emojis": ["😆", "😂"]
         }
       ]
     }
