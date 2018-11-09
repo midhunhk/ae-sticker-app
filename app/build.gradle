@@ -32,6 +32,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        abortOnError false
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -44,23 +47,8 @@ task checkDebug {
         if (android.defaultConfig.applicationId.startsWith("com.whatsapp")) {
             throw new GradleException("applicationId in defaultConfig cannot start with com.whatsapp, please change your applicationId in app/build.gradle");
         }
-        checkApplicationIdInDebug()
     }
 }
-
-private void checkApplicationIdInDebug() {
-    Properties properties = new Properties()
-    properties.load(project.rootProject.file('local.properties').newDataInputStream())
-    def ignoreApplicationIdCheck = properties.getProperty('ignoreApplicationIdCheck')
-    if (ignoreApplicationIdCheck == null) {
-        if (android.defaultConfig.applicationId.equals("com.example.samplestickerapp")) {
-            throw new GradleException("Your applicationId is currently com.example.samplestickerapp, please change your applicationId to a different string in app/build.gradle");
-        }
-    } else {
-        println("application id check ignored")
-    }
-}
-
 
 task checkRelease {
     doLast {
@@ -80,7 +68,6 @@ tasks.whenTaskAdded { task ->
         task.dependsOn checkRelease
     }
 }
-
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
