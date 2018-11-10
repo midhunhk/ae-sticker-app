@@ -1,15 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light">
+    <style name="AppTheme" parent="Base.Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="actionBarTheme">@style/MyApp.ActionBarTheme</item>
+        <item name="actionBarStyle">@style/MyApp.ActionBarStyle</item>
     </style>
 
-    <style name="MyApp.ActionBarTheme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    <style name="MyApp.ActionBarTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">@color/actionBarArrowColor</item>
+    </style>
+
+    <style name="MyApp.ActionBarStyle" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/colorPrimary</item>
         <item name="colorControlNormal">@color/actionBarArrowColor</item>
     </style>

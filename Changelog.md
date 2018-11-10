@@ -4,3 +4,4 @@
  - Initial Release Version
     - Halloween Pumpkins
     - Mythical Creatures
+    - City Landmarks
