@@ -19,8 +19,10 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.ae.apps.stickerapp.ads.AdResources;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
 import java.lang.ref.WeakReference;
@@ -32,11 +34,15 @@ public class StickerPackListActivity extends BaseActivity {
     public static final String EXTRA_STICKER_PACK_LIST_DATA = "sticker_pack_list";
     private static final int STICKER_PREVIEW_DISPLAY_LIMIT = 5;
     private static final String TAG = "StickerPackList";
+    private static final String INTENT_ACTION_ENABLE_STICKER_PACK = "com.whatsapp.intent.action.ENABLE_STICKER_PACK";
+
     private LinearLayoutManager packLayoutManager;
     private RecyclerView packRecyclerView;
     private StickerPackListAdapter allStickerPacksListAdapter;
     WhiteListCheckAsyncTask whiteListCheckAsyncTask;
     ArrayList<StickerPack> stickerPackList;
+
+    private InterstitialAd interstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +53,15 @@ public class StickerPackListActivity extends BaseActivity {
         showStickerPackList(stickerPackList);
 
         MobileAds.initialize(this, getString(R.string.google_admob_app_id) );
+        AdView mAdView = findViewById(R.id.adView);
+        AdResources adResources = new AdResources();
 
         // https://developers.google.com/admob/android/banner
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        mAdView.loadAd(new AdRequest.Builder().build());
+
+        // https://developers.google.com/admob/android/interstitial
+        interstitialAd = adResources.getInterstitial(this);
+        interstitialAd.loadAd(new AdRequest.Builder().build());
     }
 
     @Override
@@ -71,7 +81,7 @@ public class StickerPackListActivity extends BaseActivity {
     }
 
     private void showStickerPackList(List<StickerPack> stickerPackList) {
-        allStickerPacksListAdapter = new StickerPackListAdapter(stickerPackList, onAddButtonClickedListener);
+        allStickerPacksListAdapter = new StickerPackListAdapter(stickerPackList, onAddButtonClickedListener, this);
         packRecyclerView.setAdapter(allStickerPacksListAdapter);
         packLayoutManager = new LinearLayoutManager(this);
         packLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -86,8 +96,15 @@ public class StickerPackListActivity extends BaseActivity {
 
 
     private StickerPackListAdapter.OnAddButtonClickedListener onAddButtonClickedListener = pack -> {
+
+        if(interstitialAd.isLoaded()){
+            interstitialAd.show();
+        } else {
+            Toast.makeText(this, "Ad not loaded", Toast.LENGTH_SHORT).show();
+        }
+
         Intent intent = new Intent();
-        intent.setAction("com.whatsapp.intent.action.ENABLE_STICKER_PACK");
+        intent.setAction(INTENT_ACTION_ENABLE_STICKER_PACK);
         intent.putExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_ID, pack.identifier);
         intent.putExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_AUTHORITY, BuildConfig.CONTENT_PROVIDER_AUTHORITY);
         intent.putExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_NAME, pack.name);

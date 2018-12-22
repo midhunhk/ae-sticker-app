@@ -20,7 +20,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.ae.apps.stickerapp.ads.AdResources;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.InterstitialAd;
 
 import java.util.List;
 
@@ -30,10 +33,21 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<StickerPackList
     @NonNull
     private final OnAddButtonClickedListener onAddButtonClickedListener;
     private int maxNumberOfStickersInARow;
+    private InterstitialAd interstitialAd;
+    private AdResources adResources;
 
-    StickerPackListAdapter(@NonNull List<StickerPack> stickerPacks, @NonNull OnAddButtonClickedListener onAddButtonClickedListener) {
+    StickerPackListAdapter(@NonNull List<StickerPack> stickerPacks,
+                           @NonNull OnAddButtonClickedListener onAddButtonClickedListener,
+                           Context context) {
         this.stickerPacks = stickerPacks;
         this.onAddButtonClickedListener = onAddButtonClickedListener;
+
+        // Initialize the interstitial ad
+        adResources = new AdResources();
+        if (null != context) {
+            interstitialAd = adResources.getInterstitial(context);
+            interstitialAd.loadAd(adResources.newAdRequest());
+        }
     }
 
     @NonNull
@@ -54,10 +68,20 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<StickerPackList
 
         viewHolder.titleView.setText(pack.name);
         viewHolder.container.setOnClickListener(view -> {
-            Intent intent = new Intent(view.getContext(), StickerPackDetailsActivity.class);
-            intent.putExtra(StickerPackDetailsActivity.EXTRA_SHOW_UP_BUTTON, true);
-            intent.putExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_DATA, pack);
-            view.getContext().startActivity(intent);
+
+            if (null != interstitialAd && interstitialAd.isLoaded()) {
+                interstitialAd.show();
+                interstitialAd.setAdListener( new AdListener(){
+                    public void onAdClosed() {
+                        showStickerPackDetails(pack, view);
+
+                        // Load up another ad
+                        interstitialAd.loadAd(adResources.newAdRequest());
+                    }
+                });
+            } else {
+                showStickerPackDetails(pack, view);
+            }
         });
         viewHolder.imageRowView.removeAllViews();
         //if this sticker pack contains less stickers than the max, then take the smaller size.
@@ -74,6 +98,13 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<StickerPackList
             viewHolder.imageRowView.addView(rowImage);
         }
         setAddButtonAppearance(viewHolder.addButton, pack);
+    }
+
+    private void showStickerPackDetails(StickerPack pack, View view) {
+        Intent intent = new Intent(view.getContext(), StickerPackDetailsActivity.class);
+        intent.putExtra(StickerPackDetailsActivity.EXTRA_SHOW_UP_BUTTON, true);
+        intent.putExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_DATA, pack);
+        view.getContext().startActivity(intent);
     }
 
     private void setAddButtonAppearance(ImageView addButton, StickerPack pack) {
