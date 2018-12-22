@@ -21,4 +21,5 @@
     <string name="google_admob_sample_app_id">ca-app-pub-3940256099942544~3347511713</string>
     <string name="google_admob_app_id">ca-app-pub-8380411311279528~9122644618</string>
     <string name="google_admob_bottom_banner_id">ca-app-pub-8380411311279528/9708558859</string>
+    <string name="google_admob_interstitial_id">ca-app-pub-8380411311279528/9604317693</string>
 </resources>
