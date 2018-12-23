@@ -4,6 +4,7 @@
  - Interstitial Ads
  - Squaremojis
  - Updated Halloween Pumpkins
+ - Holidays
 
 ### Version 1.0.0 [Nov 2018]
  - Initial Release Version

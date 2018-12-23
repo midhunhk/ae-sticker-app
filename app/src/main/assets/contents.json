@@ -120,6 +120,48 @@
           "image_file": "08.webp"
         }
       ]
+    },
+    {
+      "identifier": "7",
+      "name": "Holidays",
+      "publisher": "ae designs",
+      "tray_image_file": "00_tray_icon.png",
+      "publisher_email":"aeapplabs.ca@gmail.com",
+      "publisher_website": "https://www.facebook.com/AeAppLabs/",
+      "privacy_policy_website": "https://github.com/midhunhk/ae-sticker-app/wiki/Privacy-Policy",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "01.webp"
+        },
+        {
+          "image_file": "02.webp"
+        },
+        {
+          "image_file": "03.webp"
+        },
+        {
+          "image_file": "04.webp"
+        },
+        {
+          "image_file": "06.webp"
+        },
+        {
+          "image_file": "06_2.webp"
+        },
+        {
+          "image_file": "06_3.webp"
+        },
+        {
+          "image_file": "07_1.webp"
+        },
+        {
+          "image_file": "07_2.webp"
+        },
+        {
+          "image_file": "08.webp"
+        }
+      ]
     }
   ]
 }
