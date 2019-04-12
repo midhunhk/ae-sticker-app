@@ -12,6 +12,7 @@
 bin/
 gen/
 out/
+projectFilesBackup/
 
 # Gradle files
 .gradle/
