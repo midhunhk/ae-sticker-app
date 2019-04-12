@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="AppTheme" parent="StickersAppTheme">
+    </style>
+
     <style name="StickersAppTheme" parent="AppTheme.Base">
         <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>

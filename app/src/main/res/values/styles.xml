@@ -1,5 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
+    <style name="AppTheme" parent="StickersAppTheme">
+    </style>
+
     <style name="StickersAppTheme" parent="AppTheme.Base">
     </style>
 

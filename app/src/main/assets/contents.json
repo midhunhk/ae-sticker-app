@@ -3,9 +3,9 @@
   "ios_app_store_link": "",
   "sticker_packs": [
     {
-      "identifier": "1",
-      "name": "Mythical Creature Icons",
-      "publisher": "ae app labs",
+      "identifier": "8",
+      "name": "National Flags",
+      "publisher": "ae designs",
       "tray_image_file": "00_tray_icon.png",
       "publisher_email":"aeapplabs.ca@gmail.com",
       "publisher_website": "https://www.facebook.com/AeAppLabs/",
@@ -13,16 +13,16 @@
       "license_agreement_website": "",
       "stickers": [
         {
-          "image_file": "01_unicorn.webp",
-          "emojis": ["☕","🙂"]
+          "image_file": "01.webp"
         },
         {
-          "image_file": "02_valkyrie.webp",
-          "emojis": ["😄","😀"]
+          "image_file": "02.webp"
         },
         {
-          "image_file": "03_wyvern.webp",
-          "emojis": ["😆", "😂"]
+          "image_file": "03.webp"
+        },
+        {
+          "image_file": "04.webp"
         }
       ]
     },
@@ -121,6 +121,31 @@
         }
       ]
     },
+
+    {
+      "identifier": "1",
+      "name": "Mythical Creature Icons",
+      "publisher": "ae app labs",
+      "tray_image_file": "00_tray_icon.png",
+      "publisher_email":"aeapplabs.ca@gmail.com",
+      "publisher_website": "https://www.facebook.com/AeAppLabs/",
+      "privacy_policy_website": "https://github.com/midhunhk/ae-sticker-app/wiki/Privacy-Policy",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "01_unicorn.webp",
+          "emojis": ["☕","🙂"]
+        },
+        {
+          "image_file": "02_valkyrie.webp",
+          "emojis": ["😄","😀"]
+        },
+        {
+          "image_file": "03_wyvern.webp",
+          "emojis": ["😆", "😂"]
+        }
+      ]
+    },
     {
       "identifier": "7",
       "name": "Holidays",
@@ -162,33 +187,7 @@
           "image_file": "08.webp"
         }
       ]
-    },
-    {
-      "identifier": "8",
-      "name": "National Flags",
-      "publisher": "ae designs",
-      "tray_image_file": "00_tray_icon.png",
-      "publisher_email":"aeapplabs.ca@gmail.com",
-      "publisher_website": "https://www.facebook.com/AeAppLabs/",
-      "privacy_policy_website": "https://github.com/midhunhk/ae-sticker-app/wiki/Privacy-Policy",
-      "license_agreement_website": "",
-      "stickers": [
-        {
-          "image_file": "01.webp"
-        },
-        {
-          "image_file": "02.webp"
-        },
-        {
-          "image_file": "03.webp"
-        },
-        {
-          "image_file": "04.webp"
-        },
-        {
-          "image_file": "06.webp"
-        }
-      ]
     }
+
   ]
 }
