@@ -96,12 +96,13 @@ public class StickerPackListActivity extends BaseActivity {
 
 
     private StickerPackListAdapter.OnAddButtonClickedListener onAddButtonClickedListener = pack -> {
-
+        /*
         if(interstitialAd.isLoaded()){
             interstitialAd.show();
         } else {
             Toast.makeText(this, "Ad not loaded", Toast.LENGTH_SHORT).show();
         }
+        */
 
         Intent intent = new Intent();
         intent.setAction(INTENT_ACTION_ENABLE_STICKER_PACK);
