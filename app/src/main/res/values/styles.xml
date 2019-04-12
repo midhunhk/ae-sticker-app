@@ -1,7 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
+    <style name="StickersAppTheme" parent="AppTheme.Base">
+    </style>
+
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Base.Theme.MaterialComponents.Light.DarkActionBar">
+    <style name="AppTheme.Base" parent="Base.Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -9,13 +12,10 @@
         <item name="actionBarStyle">@style/MyApp.ActionBarStyle</item>
     </style>
 
-    <style name="MyApp.ActionBarTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorControlNormal">@color/actionBarArrowColor</item>
-    </style>
-
     <style name="MyApp.ActionBarStyle" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/colorPrimary</item>
         <item name="colorControlNormal">@color/actionBarArrowColor</item>
+        <item name="elevation">0dp</item>
     </style>
 
     <style name="TextStyle">
