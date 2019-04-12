@@ -6,6 +6,12 @@ import com.ae.apps.stickerapp.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 
+/**
+ * Implemented in below files
+ *
+ * See {@link com.ae.apps.stickerapp.StickerPackListAdapter}
+ * See {@link com.ae.apps.stickerapp.StickerPackListActivity}
+ */
 public class AdResources {
 
     private InterstitialAd interstitialAd;

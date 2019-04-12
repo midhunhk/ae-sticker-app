@@ -44,10 +44,10 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<StickerPackList
 
         // Initialize the interstitial ad
         adResources = new AdResources();
-        if (null != context) {
+        /*if (null != context) {
             interstitialAd = adResources.getInterstitial(context);
             interstitialAd.loadAd(adResources.newAdRequest());
-        }
+        }*/
     }
 
     @NonNull
@@ -69,7 +69,7 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<StickerPackList
         viewHolder.titleView.setText(pack.name);
         viewHolder.container.setOnClickListener(view -> {
 
-            if (null != interstitialAd && interstitialAd.isLoaded()) {
+            /*if (null != interstitialAd && interstitialAd.isLoaded()) {
                 interstitialAd.show();
                 interstitialAd.setAdListener( new AdListener(){
                     public void onAdClosed() {
@@ -81,7 +81,9 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<StickerPackList
                 });
             } else {
                 showStickerPackDetails(pack, view);
-            }
+            }*/
+
+            showStickerPackDetails(pack, view);
         });
         viewHolder.imageRowView.removeAllViews();
         //if this sticker pack contains less stickers than the max, then take the smaller size.

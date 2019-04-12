@@ -60,8 +60,8 @@ public class StickerPackListActivity extends BaseActivity {
         mAdView.loadAd(new AdRequest.Builder().build());
 
         // https://developers.google.com/admob/android/interstitial
-        interstitialAd = adResources.getInterstitial(this);
-        interstitialAd.loadAd(new AdRequest.Builder().build());
+        // interstitialAd = adResources.getInterstitial(this);
+        // interstitialAd.loadAd(new AdRequest.Builder().build());
     }
 
     @Override
