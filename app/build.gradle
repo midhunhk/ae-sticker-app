@@ -24,6 +24,8 @@ android {
     }
     buildTypes {
         debug {
+            applicationIdSuffix '.debug'
+            versionNameSuffix "-DEBUG"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -73,7 +75,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:design:28.0.0'
-    implementation 'com.google.android.gms:play-services-ads:17.1.0'
+    implementation 'com.google.android.gms:play-services-ads:17.2.0'
 
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
