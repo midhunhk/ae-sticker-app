@@ -59,36 +59,6 @@
       ]
     },
     {
-      "identifier": "5",
-      "name": "City Landmarks",
-      "publisher": "ae designs",
-      "tray_image_file": "00.png",
-      "publisher_email":"aeapplabs.ca@gmail.com",
-      "publisher_website": "https://www.facebook.com/AeAppLabs/",
-      "privacy_policy_website": "https://github.com/midhunhk/ae-sticker-app/wiki/Privacy-Policy",
-      "license_agreement_website": "",
-      "stickers": [
-        {
-          "image_file": "01.webp"
-        },
-        {
-          "image_file": "02.webp"
-        },
-        {
-          "image_file": "03.webp"
-        },
-        {
-          "image_file": "04.webp"
-        },
-        {
-          "image_file": "05.webp"
-        },
-        {
-          "image_file": "06.webp"
-        }
-      ]
-    },
-    {
       "identifier": "6",
       "name": "Square Emojis",
       "publisher": "ae designs",
@@ -121,7 +91,36 @@
         }
       ]
     },
-
+    {
+      "identifier": "5",
+      "name": "City Landmarks",
+      "publisher": "ae designs",
+      "tray_image_file": "00.png",
+      "publisher_email":"aeapplabs.ca@gmail.com",
+      "publisher_website": "https://www.facebook.com/AeAppLabs/",
+      "privacy_policy_website": "https://github.com/midhunhk/ae-sticker-app/wiki/Privacy-Policy",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "01.webp"
+        },
+        {
+          "image_file": "02.webp"
+        },
+        {
+          "image_file": "03.webp"
+        },
+        {
+          "image_file": "04.webp"
+        },
+        {
+          "image_file": "05.webp"
+        },
+        {
+          "image_file": "06.webp"
+        }
+      ]
+    },
     {
       "identifier": "1",
       "name": "Mythical Creature Icons",
