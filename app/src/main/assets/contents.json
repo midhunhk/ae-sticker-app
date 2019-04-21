@@ -4,7 +4,7 @@
   "sticker_packs": [
     {
       "identifier": "8",
-      "name": "National Flags",
+      "name": "Flags",
       "publisher": "ae designs",
       "tray_image_file": "00_tray_icon.png",
       "publisher_email":"aeapplabs.ca@gmail.com",
@@ -23,6 +23,12 @@
         },
         {
           "image_file": "04.webp"
+        },
+        {
+          "image_file": "05.webp"
+        },
+        {
+          "image_file": "06.webp"
         }
       ]
     },
@@ -31,7 +37,7 @@
       "name": "Halloween Pumpkins",
       "publisher": "ae designs",
       "tray_image_file": "00_tray_icon.png",
-      "publisher_email":"aeapplabs.ca@gmail.com",
+      "publisher_email": "aeapplabs.ca@gmail.com",
       "publisher_website": "https://www.facebook.com/AeAppLabs/",
       "privacy_policy_website": "https://github.com/midhunhk/ae-sticker-app/wiki/Privacy-Policy",
       "license_agreement_website": "",

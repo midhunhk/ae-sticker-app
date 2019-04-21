@@ -20,10 +20,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.ae.apps.stickerapp.ads.AdResources;
+import com.ae.apps.stickerapp.analytics.Analytics;
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.InterstitialAd;
 
 import java.util.List;
 
@@ -33,8 +31,9 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<StickerPackList
     @NonNull
     private final OnAddButtonClickedListener onAddButtonClickedListener;
     private int maxNumberOfStickersInARow;
-    private InterstitialAd interstitialAd;
-    private AdResources adResources;
+    //private InterstitialAd interstitialAd;
+    //private AdResources adResources;
+    private Analytics analytics;
 
     StickerPackListAdapter(@NonNull List<StickerPack> stickerPacks,
                            @NonNull OnAddButtonClickedListener onAddButtonClickedListener,
@@ -43,11 +42,13 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<StickerPackList
         this.onAddButtonClickedListener = onAddButtonClickedListener;
 
         // Initialize the interstitial ad
-        adResources = new AdResources();
-        /*if (null != context) {
+        /*adResources = new AdResources();
+        if (null != context) {
             interstitialAd = adResources.getInterstitial(context);
             interstitialAd.loadAd(adResources.newAdRequest());
         }*/
+
+        analytics = Analytics.getInstance(context);
     }
 
     @NonNull
@@ -82,7 +83,7 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<StickerPackList
             } else {
                 showStickerPackDetails(pack, view);
             }*/
-
+            analytics.logEvent(Analytics.VIEW_ITEM, "sticker_pack", pack.name);
             showStickerPackDetails(pack, view);
         });
         viewHolder.imageRowView.removeAllViews();

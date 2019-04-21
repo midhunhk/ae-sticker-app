@@ -19,10 +19,9 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.ae.apps.stickerapp.ads.AdResources;
+import com.ae.apps.stickerapp.analytics.Analytics;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
 import java.lang.ref.WeakReference;
@@ -42,7 +41,7 @@ public class StickerPackListActivity extends BaseActivity {
     WhiteListCheckAsyncTask whiteListCheckAsyncTask;
     ArrayList<StickerPack> stickerPackList;
 
-    private InterstitialAd interstitialAd;
+    //private InterstitialAd interstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +53,7 @@ public class StickerPackListActivity extends BaseActivity {
 
         MobileAds.initialize(this, getString(R.string.google_admob_app_id) );
         AdView mAdView = findViewById(R.id.adView);
-        AdResources adResources = new AdResources();
+        // AdResources adResources = new AdResources();
 
         // https://developers.google.com/admob/android/banner
         mAdView.loadAd(new AdRequest.Builder().build());
@@ -62,6 +61,8 @@ public class StickerPackListActivity extends BaseActivity {
         // https://developers.google.com/admob/android/interstitial
         // interstitialAd = adResources.getInterstitial(this);
         // interstitialAd.loadAd(new AdRequest.Builder().build());
+
+        Analytics.getInstance(this).logAppStart();
     }
 
     @Override
