@@ -1,5 +1,9 @@
 ## Ae Stickers App Changelog
 
+### Version 1.3.0 [Apr 2019]
+ - Added Firebase Analytics
+ - Improved and added few icons
+
 ### Version 1.2.0 [Apr 2019]
  - Remove Interstitial Ads
  - Country Flags
