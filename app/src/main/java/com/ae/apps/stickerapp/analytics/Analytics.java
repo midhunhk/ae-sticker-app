@@ -32,7 +32,7 @@ public class Analytics {
     }
 
     public static Analytics getInstance(final Context context) {
-        if (null != sInstance) {
+        if (null == sInstance) {
             sInstance = new Analytics(context);
         }
         return sInstance;
