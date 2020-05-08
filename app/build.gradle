@@ -77,7 +77,7 @@ dependencies {
     implementation 'com.facebook.fresco:webpsupport:1.10.0'
     implementation 'com.google.firebase:firebase-core:16.0.8'
 
-    testImplementation 'junit:junit:4.13-beta-2'
+    testImplementation 'junit:junit:4.13'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }

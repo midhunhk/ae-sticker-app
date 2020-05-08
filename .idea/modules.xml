@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ae-sticker-app.iml" filepath="$PROJECT_DIR$/ae-sticker-app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ae-sticker-app.iml" filepath="$PROJECT_DIR$/.idea/ae-sticker-app.iml" group="ae-sticker-app" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="ae-sticker-app/app" />
     </modules>
   </component>
 </project>
