@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:ads="http://schemas.android.com/apk/res-auto"
-                                             xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:tools="http://schemas.android.com/tools"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="match_parent"
-                                             tools:context=".StickerPackListActivity"
-                                             tools:showIn="@layout/activity_sticker_pack_list">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:showIn="@layout/activity_sticker_pack_list">
 
     <TextView
         android:id="@+id/error_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:textColor="@android:color/holo_red_dark"/>
+        android:textColor="@android:color/holo_red_dark"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/sticker_pack_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toBottomOf="@+id/error_message"
+        tools:ignore="MissingConstraints" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
@@ -26,7 +33,10 @@
         android:foregroundGravity="center"
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-8380411311279528/9708558859"
-        ads:layout_constraintBottom_toBottomOf="parent">
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toBottomOf="@+id/sticker_pack_list">
         <!--
         Sample banner id
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
