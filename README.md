@@ -22,6 +22,7 @@ git clone https://github.com/midhunhk/ae-sticker-app.git
 
 Open the project in Android Studio  
 ```
+Note: Either disable Firebase integration or place your 'google-services.json' under the `app` folder.
 
 ## Play Store
 
