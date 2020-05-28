@@ -1,5 +1,10 @@
 ## Ae Stickers App Changelog
 
+### Version 1.4.0 [May 2020]
+ - Improved layouts
+ - Migrate to AndroidX
+ - Migrate to Fresco 2.2.0
+
 ### Version 1.3.0 [Apr 2019]
  - Added Firebase Analytics
  - Improved and added few icons

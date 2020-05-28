@@ -6,6 +6,7 @@ android {
         noCompress "webp"
     }
     compileSdkVersion 29
+    buildToolsVersion = '29.0.3'
     defaultConfig {
         applicationId "com.ae.apps.stickerapp"
         minSdkVersion 18
@@ -51,7 +52,7 @@ android {
         exclude 'lib/*/libnative-imagetranscoder.so'
         exclude 'lib/*/libnative-filters.so'
     }
-    buildToolsVersion = '28.0.3'
+
 }
 
 def build_param = "${build}";
