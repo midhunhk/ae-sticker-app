@@ -10,7 +10,7 @@ An open source Android app that includes custom stickers for whatsapp brought to
 
 To know more about the sticker packs included, see [this](https://github.com/midhunhk/ae-sticker-app/wiki/Sticker-Packs)
 
-This project is based on: https://github.com/WhatsApp/stickers/blob/master/android/
+This project is based on: https://github.com/WhatsApp/stickers/tree/master/Android
 
 The source for the stickers are at available at: https://github.com/midhunhk/artwork/tree/master/Stickers/
 
