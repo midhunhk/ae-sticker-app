@@ -14,8 +14,12 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -48,11 +52,15 @@ public class StickerPackListActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sticker_pack_list);
+
+        // Not working
+        // setCustomTitleView();
+
         packRecyclerView = findViewById(R.id.sticker_pack_list);
         stickerPackList = getIntent().getParcelableArrayListExtra(EXTRA_STICKER_PACK_LIST_DATA);
         showStickerPackList(stickerPackList);
 
-        MobileAds.initialize(this, getString(R.string.google_admob_app_id) );
+        MobileAds.initialize(this, getString(R.string.google_admob_app_id));
         AdView mAdView = findViewById(R.id.adView);
         // AdResources adResources = new AdResources();
 
@@ -64,6 +72,19 @@ public class StickerPackListActivity extends BaseActivity {
         // interstitialAd.loadAd(new AdRequest.Builder().build());
 
         Analytics.getInstance(this).logAppStart();
+    }
+
+    private void setCustomTitleView() {
+        TextView customView = (TextView)
+                LayoutInflater.from(this).inflate(R.layout.title_bar,
+                        null);
+
+        ActionBar.LayoutParams params = new ActionBar.LayoutParams(
+                ActionBar.LayoutParams.MATCH_PARENT,
+                ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
+
+        customView.setText(getString(R.string.title_activity_sticker_packs_list));
+        getSupportActionBar().setCustomView(customView, params);
     }
 
     @Override
