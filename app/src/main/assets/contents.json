@@ -7,13 +7,16 @@
       "name": "Flags",
       "publisher": "ae designs",
       "tray_image_file": "00_tray_icon.png",
+      "image_data_version":"1",
+      "avoid_cache":false,
       "publisher_email":"aeapplabs.ca@gmail.com",
       "publisher_website": "https://www.facebook.com/AeAppLabs/",
       "privacy_policy_website": "https://github.com/midhunhk/ae-sticker-app/wiki/Privacy-Policy",
       "license_agreement_website": "",
       "stickers": [
         {
-          "image_file": "01.webp"
+          "image_file": "01.webp",
+          "emojis": ["😄"]
         },
         {
           "image_file": "02.webp"
@@ -37,6 +40,8 @@
       "name": "Halloween Pumpkins",
       "publisher": "ae designs",
       "tray_image_file": "00_tray_icon.png",
+      "image_data_version":"1",
+      "avoid_cache":false,
       "publisher_email": "aeapplabs.ca@gmail.com",
       "publisher_website": "https://www.facebook.com/AeAppLabs/",
       "privacy_policy_website": "https://github.com/midhunhk/ae-sticker-app/wiki/Privacy-Policy",
@@ -69,6 +74,8 @@
       "name": "Square Emojis",
       "publisher": "ae designs",
       "tray_image_file": "00_tray_icon.png",
+      "image_data_version":"1",
+      "avoid_cache":false,
       "publisher_email":"aeapplabs.ca@gmail.com",
       "publisher_website": "https://www.facebook.com/AeAppLabs/",
       "privacy_policy_website": "https://github.com/midhunhk/ae-sticker-app/wiki/Privacy-Policy",
@@ -102,6 +109,8 @@
       "name": "City Landmarks",
       "publisher": "ae designs",
       "tray_image_file": "00.png",
+      "image_data_version":"1",
+      "avoid_cache":false,
       "publisher_email":"aeapplabs.ca@gmail.com",
       "publisher_website": "https://www.facebook.com/AeAppLabs/",
       "privacy_policy_website": "https://github.com/midhunhk/ae-sticker-app/wiki/Privacy-Policy",
@@ -132,6 +141,8 @@
       "name": "Mythical Creature Icons",
       "publisher": "ae app labs",
       "tray_image_file": "00_tray_icon.png",
+      "image_data_version":"1",
+      "avoid_cache":false,
       "publisher_email":"aeapplabs.ca@gmail.com",
       "publisher_website": "https://www.facebook.com/AeAppLabs/",
       "privacy_policy_website": "https://github.com/midhunhk/ae-sticker-app/wiki/Privacy-Policy",
@@ -156,6 +167,8 @@
       "name": "Holidays",
       "publisher": "ae designs",
       "tray_image_file": "00_tray_icon.png",
+      "image_data_version":"1",
+      "avoid_cache":false,
       "publisher_email":"aeapplabs.ca@gmail.com",
       "publisher_website": "https://www.facebook.com/AeAppLabs/",
       "privacy_policy_website": "https://github.com/midhunhk/ae-sticker-app/wiki/Privacy-Policy",
