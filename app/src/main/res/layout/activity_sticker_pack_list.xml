@@ -13,7 +13,7 @@
 
     <TextView
         android:id="@+id/error_message"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:layout_alignParentTop="true"
@@ -26,7 +26,6 @@
         android:foregroundGravity="center"
         android:layout_below="@+id/sticker_pack_list"
         android:layout_alignParentBottom="true"
-        android:backgroundTint="@color/colorAccent"
         ads:adSize="BANNER"
         ads:adUnitId="@string/google_admob_ad_unit_id">
     </com.google.android.gms.ads.AdView>
