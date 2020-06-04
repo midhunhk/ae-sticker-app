@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ae Stickers</string>
-    <string name="app_version">1.3.0</string>
+    <string name="app_version">1.4.1</string>
     <string name="tray_image_content_description">Sticker Pack Tray Image</string>
     <string name="more_info_button">More info about sticker pack</string>
     <string name="add_to_whatsapp">Add to WhatsApp</string>
@@ -19,11 +19,14 @@
     <string name="info_screen_tray_icon">Tray icon</string>
     <string name="details_pack_already_added">Sticker pack added to WhatsApp</string>
 
-    <!-- admob test ids to be checked in to vcs -->
-    <!-- replace with real ids when generating release build -->
+    <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+    <!-- Sample Banner Ad ID: ca-app-pub-3940256099942544/6300978111 -->
+    <!-- Sample Interstitial Ad ID: ca-app-pub-3940256099942544/1033173712 -->
+
+    <!-- To be replaced with real ids when generating release build -->
     <string name="google_admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
     <string name="google_admob_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="google_admob_interstitial_id">ca-app-pub-8380411311279528/9604317693</string>
+    <string name="google_admob_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
 
     <string name="analytics_key_app_version">app_version</string>
     <string name="analytics_key_start_time">start_time</string>
