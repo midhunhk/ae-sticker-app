@@ -7,12 +7,13 @@ android {
     }
     compileSdkVersion 29
     buildToolsVersion = '29.0.3'
+
     defaultConfig {
         applicationId "com.ae.apps.stickerapp"
         minSdkVersion 18
         targetSdkVersion 29
-        versionCode 8
-        versionName "1.4.1"
+        versionCode 9
+        versionName "1.5.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def contentProviderAuthority = applicationId + ".stickercontentprovider"
         // Creates a placeholder property to use in the manifest.
@@ -22,6 +23,7 @@ android {
         buildConfigField("String",
                 "CONTENT_PROVIDER_AUTHORITY",
                 "\"${contentProviderAuthority}\"")
+        multiDexEnabled true
     }
     buildTypes {
         debug {
@@ -72,6 +74,7 @@ if (build_param != "dev") {
             variant.setIgnore(true);
         }
     }
+
 } else {
     //exclude all except production build
     android.variantFilter { variant ->
@@ -81,12 +84,38 @@ if (build_param != "dev") {
     }
 }
 
+tasks.whenTaskAdded { task ->
+    println(task.name)
+    if (task.name.contains("assembleRelease")) {
+        task.dependsOn checkRelease
+    }
+}
+
+// Check if we are using the default ad mob configuration when creating the release build
+task checkRelease {
+    doLast {
+        println("checkRelease")
+        if (checkStringsValue('google_admob_app_id') == "ca-app-pub-3940256099942544~3347511713") {
+            throw new GradleException("Admob default config found. Replace the google_admob_app_id value in strings.xml")
+        }
+        if (checkStringsValue('google_admob_ad_unit_id') == "ca-app-pub-3940256099942544/6300978111") {
+            throw new GradleException("Admob default config found. Replace the google_admob_app_id value in strings.xml")
+        }
+    }
+}
+
+def checkStringsValue(keyName) {
+    def stringsFile = android.sourceSets.main.res.sourceFiles.find { it.name.equals 'strings.xml' }
+    return new XmlParser().parse(stringsFile).string.find { it.@name.equals keyName }.text()
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
-    implementation 'com.google.android.gms:play-services-ads:17.2.0'
-    implementation 'com.google.firebase:firebase-core:16.0.8'
+    implementation 'com.google.android.gms:play-services-ads:19.2.0'
+    implementation 'com.google.firebase:firebase-core:17.4.3'
+    implementation 'androidx.multidex:multidex:2.0.1'
 
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
