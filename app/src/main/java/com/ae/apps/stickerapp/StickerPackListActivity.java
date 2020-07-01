@@ -32,6 +32,7 @@ import com.google.android.gms.ads.MobileAds;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class StickerPackListActivity extends BaseActivity {
@@ -60,7 +61,7 @@ public class StickerPackListActivity extends BaseActivity {
         stickerPackList = getIntent().getParcelableArrayListExtra(EXTRA_STICKER_PACK_LIST_DATA);
         showStickerPackList(stickerPackList);
 
-        MobileAds.initialize(this, getString(R.string.google_admob_app_id));
+        MobileAds.initialize(this, initializationStatus -> {});
         AdView mAdView = findViewById(R.id.adView);
         // AdResources adResources = new AdResources();
 
@@ -84,7 +85,7 @@ public class StickerPackListActivity extends BaseActivity {
                 ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
 
         customView.setText(getString(R.string.title_activity_sticker_packs_list));
-        getSupportActionBar().setCustomView(customView, params);
+        Objects.requireNonNull(getSupportActionBar()).setCustomView(customView, params);
     }
 
     @Override
