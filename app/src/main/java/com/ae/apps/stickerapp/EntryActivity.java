@@ -24,7 +24,15 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
-public class EntryActivity extends BaseActivity {
+import eu.dkaratzas.android.inapp.update.Constants;
+import eu.dkaratzas.android.inapp.update.InAppUpdateManager;
+import eu.dkaratzas.android.inapp.update.InAppUpdateStatus;
+
+public class EntryActivity extends BaseActivity implements InAppUpdateManager.InAppUpdateHandler {
+
+    private static final int REQ_CODE_VERSION_UPDATE = 530;
+    private static final String TAG = "StickerEntryActivity";
+
     private View progressBar;
     private LoadListAsyncTask loadListAsyncTask;
 
@@ -40,6 +48,19 @@ public class EntryActivity extends BaseActivity {
         progressBar = findViewById(R.id.entry_activity_progress);
         loadListAsyncTask = new LoadListAsyncTask(this);
         loadListAsyncTask.execute();
+
+        initInAppUpdate();
+    }
+
+    private void initInAppUpdate() {
+        InAppUpdateManager inAppUpdateManager = InAppUpdateManager.Builder(this, REQ_CODE_VERSION_UPDATE)
+                .resumeUpdates(true) // Resume the update, if the update was stalled. Default is true
+                .mode(Constants.UpdateMode.FLEXIBLE)
+                .snackBarMessage("An update has just been downloaded.")
+                .snackBarAction("RESTART")
+                .handler(this);
+
+        inAppUpdateManager.checkForAppUpdate();
     }
 
     private void showStickerPack(ArrayList<StickerPack> stickerPackList) {
@@ -73,6 +94,16 @@ public class EntryActivity extends BaseActivity {
         if (loadListAsyncTask != null && !loadListAsyncTask.isCancelled()) {
             loadListAsyncTask.cancel(true);
         }
+    }
+
+    @Override
+    public void onInAppUpdateError(int code, Throwable error) {
+        Log.d(TAG, "code: " + code, error);
+    }
+
+    @Override
+    public void onInAppUpdateStatus(InAppUpdateStatus status) {
+
     }
 
     static class LoadListAsyncTask extends AsyncTask<Void, Void, Pair<String, ArrayList<StickerPack>>> {

@@ -24,8 +24,8 @@
     <!-- Sample Interstitial Ad ID: ca-app-pub-3940256099942544/1033173712 -->
 
     <!-- To be replaced with real ids when generating release build -->
-    <string name="google_admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="google_admob_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="google_admob_app_id">ca-app-pub-8380411311279528~9122644618</string>
+    <string name="google_admob_ad_unit_id">ca-app-pub-8380411311279528/9708558859</string>
     <string name="google_admob_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
 
     <string name="analytics_key_app_version">app_version</string>
