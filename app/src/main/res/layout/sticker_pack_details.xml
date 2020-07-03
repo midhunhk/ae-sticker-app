@@ -27,7 +27,7 @@
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:contentDescription="@string/tray_image_content_description"
-            android:src="@color/colorAccent"
+            android:src="?attr/colorSecondary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="16dp" />
