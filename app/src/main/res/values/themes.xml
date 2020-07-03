@@ -8,10 +8,10 @@
         <!--colorPrimary colors map to components and elements, such as app bars and buttons. -->
         <!--colorSecondary colors are most often used as accents on components, such as FABs and -->
         <!--selection controls.-->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorSecondary">@color/green_200</item>
-        <item name="colorSecondaryVariant">@color/green_500</item>
+        <item name="colorPrimary">@color/green_500</item>
+        <item name="colorPrimaryVariant">@color/green_700</item>
+        <item name="colorSecondary">@color/cyan_200</item>
+        <item name="colorSecondaryVariant">@color/cyan_500</item>
 
         <!--text fields.-->
         <item name="android:colorBackground">@color/white_50</item>
@@ -27,10 +27,11 @@
     </style>
 
     <style name="Base.Theme.MaterialThemeBuilder" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:statusBarColor" tools:ignore="NewApi">?attr/colorSurface</item>
+        <item name="android:statusBarColor" tools:ignore="NewApi">?attr/colorPrimaryVariant</item>
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
         <item name="android:navigationBarColor" tools:ignore="NewApi">?android:attr/colorBackground</item>
         <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
         <item name="android:navigationBarDividerColor" tools:ignore="NewApi">?attr/colorControlHighlight</item>
+        <item name="actionBarStyle">@style/MyApp.ActionBarStyle</item>
     </style>
 </resources>

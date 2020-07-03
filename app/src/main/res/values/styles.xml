@@ -36,4 +36,12 @@
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
         -->
     </style>
+
+    <style name="MyApp.ActionBarStyle" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="colorControlNormal">@color/actionBarArrowColor</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+
 </resources>

@@ -2,10 +2,10 @@
 <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimary"
+    android:background="?attr/colorPrimaryVariant"
     android:minHeight="?attr/actionBarSize"
     android:layout_alignParentTop="true"
-    app:titleTextColor="@android:color/white"
+    app:titleTextColor="?attr/colorOnPrimary"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <TextView

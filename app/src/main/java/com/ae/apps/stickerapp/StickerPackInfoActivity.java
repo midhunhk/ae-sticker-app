@@ -76,6 +76,11 @@ public class StickerPackInfoActivity extends BaseActivity {
     private void setToolBar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
     }
 
     private void launchEmailClient(String email) {
