@@ -1,7 +1,7 @@
 ## Ae Stickers App Changelog
 
 ### Version 1.6.0 [July 2020]
- - Dark Mode
+ - Support Dark Mode
 
 ### Version 1.5.1 [June 2020]
   - Test Android In-App Update feature
