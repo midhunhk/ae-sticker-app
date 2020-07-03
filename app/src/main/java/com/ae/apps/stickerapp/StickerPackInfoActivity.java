@@ -19,6 +19,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.appcompat.widget.Toolbar;
+
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
@@ -30,6 +32,8 @@ public class StickerPackInfoActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sticker_pack_info);
+
+        setToolBar();
 
         final String trayIconUriString = getIntent().getStringExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_TRAY_ICON);
         final String website = getIntent().getStringExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_WEBSITE);
@@ -67,6 +71,11 @@ public class StickerPackInfoActivity extends BaseActivity {
         } else {
             viewPrivacyPolicy.setOnClickListener(v -> launchWebpage(privacyPolicy));
         }
+    }
+
+    private void setToolBar() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
     }
 
     private void launchEmailClient(String email) {

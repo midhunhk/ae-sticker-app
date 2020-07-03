@@ -5,14 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="@dimen/preview_side_margin"
-    android:layout_marginTop="8dp"
     android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
+        android:layout_marginTop="@dimen/preview_side_margin"
         android:layout_marginEnd="@dimen/preview_side_margin"
         android:layout_marginLeft="@dimen/preview_side_margin"
         android:layout_marginRight="@dimen/preview_side_margin"
@@ -28,7 +30,6 @@
             android:src="@color/colorAccent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@color/colorAccent"
             android:layout_marginStart="16dp" />
 
         <TextView
@@ -86,7 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:alpha="0.1"
-            android:background="#000000"
+            android:background="?attr/colorOnPrimary"
             android:visibility="invisible"
             tools:visibility="visible" />
 
@@ -107,7 +108,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="@string/details_pack_already_added"
-            android:textColor="#9B9B9B"
+            android:textColor="?attr/colorOnBackground"
             android:textSize="14sp"
             android:visibility="gone"
             tools:visibility="visible" />

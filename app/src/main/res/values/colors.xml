@@ -1,10 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#009385</color>
-    <color name="colorPrimaryDark">#BABABA</color>
+    <color name="colorPrimary">#00BCD4</color>
+    <color name="colorPrimaryVariant">#03A9F4</color>
+    <color name="colorOnPrimary">#000000</color>
+
+    <color name="colorSecondary">@color/colorAccent</color>
+    <color name="colorSecondaryVariant">#009385</color>
+    <color name="colorOnSecondary">#fefefe</color>
+
     <color name="colorAccent">#12EAEA</color>
     <color name="inactiveAddButtonColor">#B3B3B3</color>
-    <color name="infoPageBackgroundColor">#EBEBEB</color>
+    <!--<color name="infoPageBackgroundColor">#EBEBEB</color>-->
     <color name="actionBarArrowColor">@color/colorAccent</color>
     <color name="color_white">#FFFFFF</color>
+
+    <!-- Copied -->
+
+    <!--Color palette-->
+
+    <color name="purple_200">#bb86fc</color> <!--Color primary (dark)-->
+    <color name="purple_500">#6200ee</color> <!--Color primary (light)-->
+    <color name="purple_600">#4b01d0</color> <!--Color primary variant (dark)-->
+    <color name="purple_700">#3700b3</color> <!--Color primary variant (light)-->
+
+    <color name="green_200">#03dac6</color> <!--Color secondary-->
+    <color name="green_500">#018786</color> <!--Color secondary variant-->
+
+    <color name="red_200">#cf6679</color> <!--Color error (dark)-->
+    <color name="red_600">#b00020</color> <!--Color error (light)-->
+
+    <!--Color surface (light), color on error (light), -->
+    <!--color on surface (dark), color on surface (dark)-->
+    <color name="white_50">#ffffff</color>
+
+    <color name="black_800">#121212</color> <!--Color surface (dark)-->
+    <!--Color on secondary (light), color on background (light),-->
+    <!--color on surface (light)-->
+    <color name="black_900">#000000</color>
 </resources>

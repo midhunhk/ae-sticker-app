@@ -18,6 +18,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 
@@ -42,9 +44,18 @@ public class EntryActivity extends BaseActivity implements InAppUpdateManager.In
         Fresco.initialize(this);
         setContentView(R.layout.activity_entry);
         overridePendingTransition(0, 0);
+        /*
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
-        }
+        }*/
+
+        // For Night mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+
+        // For toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         progressBar = findViewById(R.id.entry_activity_progress);
         loadListAsyncTask = new LoadListAsyncTask(this);
         loadListAsyncTask.execute();
@@ -55,7 +66,8 @@ public class EntryActivity extends BaseActivity implements InAppUpdateManager.In
     private void initInAppUpdate() {
         InAppUpdateManager inAppUpdateManager = InAppUpdateManager.Builder(this, REQ_CODE_VERSION_UPDATE)
                 .resumeUpdates(true) // Resume the update, if the update was stalled. Default is true
-                .mode(Constants.UpdateMode.FLEXIBLE)
+                //.mode(Constants.UpdateMode.FLEXIBLE)
+                .mode(Constants.UpdateMode.IMMEDIATE)
                 .snackBarMessage("An update has just been downloaded.")
                 .snackBarAction("RESTART")
                 .handler(this);

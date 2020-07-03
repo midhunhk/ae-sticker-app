@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/StickersAppTheme"
+        android:theme="@style/Theme.StickersApp"
         tools:ignore="GoogleAppIndexingWarning">
 
         <meta-data
