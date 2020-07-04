@@ -49,7 +49,7 @@ android {
 
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
-            outputFileName = "aeStickersApp-${variant.versionName}-${variant.name}.apk"
+            outputFileName = "aeStickersApp-${variant.versionName}-${variant.name}-${variant.versionCode}.apk"
         }
     }
 
