@@ -12,7 +12,7 @@
     <FrameLayout
         android:id="@+id/sticker_pack_list_container"
         android:layout_below="@+id/include"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -40,7 +40,6 @@
         android:foregroundGravity="center"
         ads:adSize="BANNER"
         ads:adUnitId="@string/google_admob_ad_unit_id"
-        android:layout_below="@+id/sticker_pack_list_container"
         android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
