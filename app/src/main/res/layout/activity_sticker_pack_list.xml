@@ -2,36 +2,43 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <include layout="@layout/toolbar" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/sticker_pack_list"
-        android:layout_below="@+id/toolbar"
+    <FrameLayout
+        android:id="@+id/sticker_pack_list_container"
+        android:layout_below="@+id/include"
+        android:layout_marginBottom="80dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/error_message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text=""
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/toolbar"
-        android:textColor="?attr/colorError"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sticker_pack_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical" />
+
+        <TextView
+            android:id="@+id/error_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="16dp"
+            android:text=""
+            android:textColor="?attr/colorError" />
+    </FrameLayout>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:foregroundGravity="center"
-        android:layout_below="@+id/sticker_pack_list"
-        android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/google_admob_ad_unit_id">
-    </com.google.android.gms.ads.AdView>
+        ads:adUnitId="@string/google_admob_ad_unit_id"
+        android:layout_below="@+id/sticker_pack_list_container"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

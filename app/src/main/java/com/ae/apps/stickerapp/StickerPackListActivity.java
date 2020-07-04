@@ -11,6 +11,7 @@ package com.ae.apps.stickerapp;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.graphics.Canvas;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -58,6 +59,13 @@ public class StickerPackListActivity extends BaseActivity {
         setToolBar();
 
         packRecyclerView = findViewById(R.id.sticker_pack_list);
+        packRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL){
+            @Override
+            public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
+                // No draw divider
+            }
+        });
+
         stickerPackList = getIntent().getParcelableArrayListExtra(EXTRA_STICKER_PACK_LIST_DATA);
         showStickerPackList(stickerPackList);
 
