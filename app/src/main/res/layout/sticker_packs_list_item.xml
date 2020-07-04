@@ -6,8 +6,10 @@
     android:layout_marginEnd="10dp"
     android:layout_marginTop="5dp"
     android:layout_marginBottom="5dp"
+    android:background="@color/cyan_200"
     app:cardCornerRadius="10dp"
     app:cardElevation="5dp"
+    app:cardUseCompatPadding="true"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -16,7 +18,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
-        android:foreground="?android:attr/selectableItemBackground"
         android:orientation="vertical"
         android:paddingStart="16dp"
         android:paddingTop="8dp"
@@ -61,6 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
+                android:visibility="gone"
                 tools:text="petellison" />
 
             <TextView
@@ -68,6 +70,7 @@
                 style="@style/sticker_packs_list_item_author_style"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:visibility="gone"
                 android:paddingStart="@dimen/sticker_pack_list_item_row_dot_horizontal_padding"
                 android:paddingLeft="@dimen/sticker_pack_list_item_row_dot_horizontal_padding"
                 android:paddingEnd="@dimen/sticker_pack_list_item_row_dot_horizontal_padding"
@@ -79,6 +82,7 @@
                 style="@style/sticker_packs_list_item_author_style"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:visibility="gone"
                 tools:text="700kb" />
 
         </LinearLayout>

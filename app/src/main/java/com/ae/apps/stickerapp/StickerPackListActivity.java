@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -59,12 +60,6 @@ public class StickerPackListActivity extends BaseActivity {
         setToolBar();
 
         packRecyclerView = findViewById(R.id.sticker_pack_list);
-        packRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL){
-            @Override
-            public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
-                // No draw divider
-            }
-        });
 
         stickerPackList = getIntent().getParcelableArrayListExtra(EXTRA_STICKER_PACK_LIST_DATA);
         showStickerPackList(stickerPackList);
@@ -109,13 +104,17 @@ public class StickerPackListActivity extends BaseActivity {
         packRecyclerView.setAdapter(allStickerPacksListAdapter);
         packLayoutManager = new LinearLayoutManager(this);
         packLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        // setDividerForRecyclerView();
+        packRecyclerView.setLayoutManager(packLayoutManager);
+        packRecyclerView.getViewTreeObserver().addOnGlobalLayoutListener(this::recalculateColumnCount);
+    }
+
+    private void setDividerForRecyclerView() {
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(
                 packRecyclerView.getContext(),
                 packLayoutManager.getOrientation()
         );
         packRecyclerView.addItemDecoration(dividerItemDecoration);
-        packRecyclerView.setLayoutManager(packLayoutManager);
-        packRecyclerView.getViewTreeObserver().addOnGlobalLayoutListener(this::recalculateColumnCount);
     }
 
 
