@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Color palette-->
-    <color name="green_200">#A5D6A7</color> <!--Color primary (dark)-->
-    <color name="green_500">#4CAF50</color> <!--Color primary (light)-->
-    <color name="green_600">#43A047</color> <!--Color primary variant (dark)-->
-    <color name="green_700">#388E3C</color> <!--Color primary variant (light)-->
+    <color name="pink_200">#F48FB1</color> <!--Color primary (dark)-->
+    <color name="pink_500">#E91E63</color> <!--Color primary (light)-->
+    <color name="pink_600">#D81B60</color> <!--Color primary variant (dark)-->
+    <color name="pink_700">#C2185B</color> <!--Color primary variant (light)-->
 
     <color name="cyan_200">#18FFFF</color> <!--Color secondary-->
     <color name="cyan_500">#00E5FF</color> <!--Color secondary variant-->
