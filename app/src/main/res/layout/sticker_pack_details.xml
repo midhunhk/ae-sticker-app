@@ -130,6 +130,7 @@
                 android:background="@android:color/transparent"
                 android:clickable="false"
                 android:drawablePadding="8dp"
+                android:textColor="@color/white_50"
                 android:drawableStart="@drawable/sticker_3rdparty_wa"
                 android:focusable="false"
                 android:foreground="@android:color/transparent"
