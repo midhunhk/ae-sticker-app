@@ -64,18 +64,22 @@ public class StickerPackListActivity extends BaseActivity {
         stickerPackList = getIntent().getParcelableArrayListExtra(EXTRA_STICKER_PACK_LIST_DATA);
         showStickerPackList(stickerPackList);
 
-        MobileAds.initialize(this, initializationStatus -> {});
-        AdView mAdView = findViewById(R.id.adView);
-        // AdResources adResources = new AdResources();
-
-        // https://developers.google.com/admob/android/banner
-        mAdView.loadAd(new AdRequest.Builder().build());
+        initAd();
 
         // https://developers.google.com/admob/android/interstitial
         // interstitialAd = adResources.getInterstitial(this);
         // interstitialAd.loadAd(new AdRequest.Builder().build());
 
         Analytics.getInstance(this).logAppStart();
+    }
+
+    private void initAd() {
+        MobileAds.initialize(this, initializationStatus -> {});
+        AdView mAdView = findViewById(R.id.adView);
+        // AdResources adResources = new AdResources();
+
+        // https://developers.google.com/admob/android/banner
+        mAdView.loadAd(new AdRequest.Builder().build());
     }
 
     private void setToolBar() {
