@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,10 +12,9 @@
 
     <FrameLayout
         android:id="@+id/sticker_pack_list_container"
-        android:layout_below="@+id/include"
-        android:layout_marginBottom="60dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/sticker_pack_list"
@@ -33,13 +33,23 @@
             android:textColor="?attr/colorError" />
     </FrameLayout>
 
+    <TextView
+        android:id="@+id/txtMadeWith"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:gravity="center"
+        android:background="?attr/colorSurface"
+        android:textColor="?attr/colorOnSurface"
+        android:text="@string/str_made_with"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:foregroundGravity="center"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/google_admob_ad_unit_id"
-        android:layout_alignParentBottom="true"/>
+        ads:adUnitId="@string/google_admob_ad_unit_id"/>
 
-</RelativeLayout>
+</LinearLayout>
