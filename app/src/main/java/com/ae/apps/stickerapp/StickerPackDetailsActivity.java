@@ -29,6 +29,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ae.apps.stickerapp.reviews.AppReview;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -99,6 +100,8 @@ public class StickerPackDetailsActivity extends BaseActivity {
         }
 
         initAd();
+
+        AppReview.getInstance().launchReviewFlow(this);
     }
 
     private void setToolBar() {

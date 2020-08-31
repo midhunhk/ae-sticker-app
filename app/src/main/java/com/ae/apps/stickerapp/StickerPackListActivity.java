@@ -28,6 +28,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ae.apps.stickerapp.analytics.Analytics;
+import com.ae.apps.stickerapp.reviews.AppReview;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -71,6 +72,8 @@ public class StickerPackListActivity extends BaseActivity {
         // interstitialAd.loadAd(new AdRequest.Builder().build());
 
         Analytics.getInstance(this).logAppStart();
+
+        AppReview.getInstance().init(this);
     }
 
     private void initAd() {
