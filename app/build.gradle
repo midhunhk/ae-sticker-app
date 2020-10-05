@@ -5,6 +5,9 @@ android {
     aaptOptions {
         noCompress "webp"
     }
+    
+    // Note to Self:
+    // Update .travis.yml to ensure build stability whenever platform version is upgraded
     compileSdkVersion 30
     buildToolsVersion = '29.0.3'
 
