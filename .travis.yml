@@ -33,6 +33,7 @@ android:
 before_install:
   - chmod +x gradlew
   - ./gradlew dependencies || true
+  - yes | sdkmanager "platforms;android-$ANDROID_API_LEVEL"
 
 before_script:
   - echo no | android create avd --force -n test -t android-$EMULATOR_API_LEVEL --abi armeabi-v7a
