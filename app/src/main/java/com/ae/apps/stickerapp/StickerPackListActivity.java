@@ -11,18 +11,17 @@ package com.ae.apps.stickerapp;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.graphics.Canvas;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.widget.TextView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 
-import androidx.appcompat.app.ActionBar;
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,7 +35,6 @@ import com.google.android.gms.ads.MobileAds;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 
 public class StickerPackListActivity extends BaseActivity {
@@ -48,6 +46,7 @@ public class StickerPackListActivity extends BaseActivity {
     private LinearLayoutManager packLayoutManager;
     private RecyclerView packRecyclerView;
     private StickerPackListAdapter allStickerPacksListAdapter;
+    private Toolbar myToolbar;
     WhiteListCheckAsyncTask whiteListCheckAsyncTask;
     ArrayList<StickerPack> stickerPackList;
 
@@ -58,10 +57,8 @@ public class StickerPackListActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sticker_pack_list);
 
-        setToolBar();
-
         packRecyclerView = findViewById(R.id.sticker_pack_list);
-
+        myToolbar = findViewById(R.id.app_toolbar);
         stickerPackList = getIntent().getParcelableArrayListExtra(EXTRA_STICKER_PACK_LIST_DATA);
         showStickerPackList(stickerPackList);
 
@@ -74,10 +71,14 @@ public class StickerPackListActivity extends BaseActivity {
         Analytics.getInstance(this).logAppStart();
 
         AppReview.getInstance().init(this);
+
+        setToolBar();
     }
 
+
     private void initAd() {
-        MobileAds.initialize(this, initializationStatus -> {});
+        MobileAds.initialize(this, initializationStatus -> {
+        });
         AdView mAdView = findViewById(R.id.adView);
         // AdResources adResources = new AdResources();
 
@@ -85,9 +86,35 @@ public class StickerPackListActivity extends BaseActivity {
         mAdView.loadAd(new AdRequest.Builder().build());
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.menu_privacy_policy) {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(getString(R.string.url_app_privacy_policy)));
+            startActivity(intent);
+        }
+        return true;
+    }
+
     private void setToolBar() {
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.include);
+        toolbar.inflateMenu(R.menu.menu_main);
         setSupportActionBar(toolbar);
+        toolbar.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.menu_privacy_policy) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(getString(R.string.url_app_privacy_policy)));
+                startActivity(intent);
+            }
+            return false;
+        });
     }
 
     @Override

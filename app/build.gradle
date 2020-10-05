@@ -5,15 +5,15 @@ android {
     aaptOptions {
         noCompress "webp"
     }
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion = '29.0.3'
 
     defaultConfig {
         applicationId "com.ae.apps.stickerapp"
         minSdkVersion 18
-        targetSdkVersion 29
-        versionCode 14
-        versionName "1.6.2"
+        targetSdkVersion 30
+        versionCode 15
+        versionName "1.6.3"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def contentProviderAuthority = applicationId + ".stickercontentprovider"
         // Creates a placeholder property to use in the manifest.
@@ -116,10 +116,10 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
 
-    implementation 'com.google.android.material:material:1.2.0'
-    implementation 'com.google.android.gms:play-services-ads:19.3.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.google.android.gms:play-services-ads:19.4.0'
     implementation 'com.google.firebase:firebase-core:17.5.0'
-    implementation 'com.google.android.play:core:1.8.0'
+    implementation 'com.google.android.play:core:1.8.2'
 
     def fresco_version = '2.2.0'
     implementation "com.facebook.fresco:fresco:$fresco_version"

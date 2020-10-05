@@ -105,7 +105,7 @@ public class StickerPackDetailsActivity extends BaseActivity {
     }
 
     private void setToolBar() {
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.app_toolbar);
         setSupportActionBar(toolbar);
     }
 

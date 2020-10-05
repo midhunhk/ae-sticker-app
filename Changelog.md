@@ -1,5 +1,9 @@
 ## Ae Stickers App Changelog
 
+### Version 1.6.3 [Oct 2020]
+ - Layout improvements
+ - App level Privacy Policy
+
 ### Version 1.6.2 [July 2020]
  - Layout improvements
 
