@@ -42,5 +42,9 @@
         <item name="elevation">0dp</item>
     </style>
 
+    <style name="Theme_Dialog" parent="Base.Theme.StickersApp">
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">50%</item>
+    </style>
 
 </resources>

@@ -86,7 +86,7 @@ public class StickerPackDetailsActivity extends BaseActivity {
         recyclerView.addOnScrollListener(dividerScrollListener);
         divider = findViewById(R.id.divider);
         if (stickerPreviewAdapter == null) {
-            stickerPreviewAdapter = new StickerPreviewAdapter(getLayoutInflater(), R.drawable.sticker_error, getResources().getDimensionPixelSize(R.dimen.sticker_pack_details_image_size), getResources().getDimensionPixelSize(R.dimen.sticker_pack_details_image_padding), stickerPack);
+            stickerPreviewAdapter = new StickerPreviewAdapter(this, getLayoutInflater(), R.drawable.sticker_error, getResources().getDimensionPixelSize(R.dimen.sticker_pack_details_image_size), getResources().getDimensionPixelSize(R.dimen.sticker_pack_details_image_padding), stickerPack);
             recyclerView.setAdapter(stickerPreviewAdapter);
         }
         packNameTextView.setText(stickerPack.name);
