@@ -1,5 +1,9 @@
 ## Ae Stickers App Changelog
 
+### Version 1.7.0 [Nov 2020]
+ - Layout improvements
+ - Option to see larger icon
+
 ### Version 1.6.3 [Oct 2020]
  - Layout improvements
  - App level Privacy Policy

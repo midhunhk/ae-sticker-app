@@ -14,6 +14,9 @@ This project is based on: https://github.com/WhatsApp/stickers/tree/master/Andro
 
 The source for the stickers are at available at: https://github.com/midhunhk/artwork/tree/master/Stickers/
 
+### Support the Project
+If this project has helped you out in anyway, kindly starring and or sharing the repository. This would help the project reach others in the community.
+
 ### Source Code
 Clone this repo and checkout the latest development branch.
 
