@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="@dimen/preview_side_margin"
+    android:background="?attr/colorSurface"
     android:orientation="vertical">
 
     <include layout="@layout/toolbar" />
@@ -29,6 +30,7 @@
             android:layout_height="36dp"
             android:contentDescription="@string/tray_image_content_description"
             android:src="?attr/colorSecondary"
+            android:fontFamily="@font/open_sans"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="16dp" />
@@ -39,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_from_tray_to_name"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/open_sans"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/tray_image"
@@ -51,6 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_from_tray_to_name"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/open_sans"
             app:layout_constraintStart_toEndOf="@+id/tray_image"
             app:layout_constraintTop_toBottomOf="@+id/pack_name"
             tools:text="Author" />
@@ -60,6 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_from_tray_to_name"
+            android:fontFamily="@font/open_sans"
             app:layout_constraintStart_toEndOf="@+id/tray_image"
             app:layout_constraintTop_toBottomOf="@+id/author"
             tools:text="Size" />
