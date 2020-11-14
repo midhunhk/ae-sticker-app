@@ -80,6 +80,15 @@
         ads:adSize="BANNER"
         ads:adUnitId="@string/google_admob_ad_unit_id"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="5dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/str_large_icon_view"/>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
