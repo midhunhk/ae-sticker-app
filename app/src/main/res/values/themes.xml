@@ -15,10 +15,9 @@
 
         <!--text fields.-->
         <item name="android:colorBackground">@color/white_50</item>
-        <item name="colorSurface">@color/white_300</item>
+        <item name="colorSurface">@color/white_50</item>
         <item name="colorError">@color/red_600</item>
 
-        <item name="colorOnPrimarySurface">@color/white_300</item>
         <item name="colorOnPrimary">@color/white_50</item>
         <item name="colorOnSecondary">@color/black_900</item>
         <item name="colorOnBackground">@color/black_900</item>

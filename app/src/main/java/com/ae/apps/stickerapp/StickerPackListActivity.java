@@ -46,7 +46,6 @@ public class StickerPackListActivity extends BaseActivity {
     private LinearLayoutManager packLayoutManager;
     private RecyclerView packRecyclerView;
     private StickerPackListAdapter allStickerPacksListAdapter;
-    private Toolbar myToolbar;
     WhiteListCheckAsyncTask whiteListCheckAsyncTask;
     ArrayList<StickerPack> stickerPackList;
 
@@ -58,7 +57,7 @@ public class StickerPackListActivity extends BaseActivity {
         setContentView(R.layout.activity_sticker_pack_list);
 
         packRecyclerView = findViewById(R.id.sticker_pack_list);
-        myToolbar = findViewById(R.id.app_toolbar);
+        Toolbar myToolbar = findViewById(R.id.app_toolbar);
         stickerPackList = getIntent().getParcelableArrayListExtra(EXTRA_STICKER_PACK_LIST_DATA);
         showStickerPackList(stickerPackList);
 
@@ -143,6 +142,7 @@ public class StickerPackListActivity extends BaseActivity {
         packRecyclerView.getViewTreeObserver().addOnGlobalLayoutListener(this::recalculateColumnCount);
     }
 
+    /*
     private void setDividerForRecyclerView() {
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(
                 packRecyclerView.getContext(),
@@ -150,9 +150,9 @@ public class StickerPackListActivity extends BaseActivity {
         );
         packRecyclerView.addItemDecoration(dividerItemDecoration);
     }
+     */
 
-
-    private StickerPackListAdapter.OnAddButtonClickedListener onAddButtonClickedListener = pack -> {
+    private final StickerPackListAdapter.OnAddButtonClickedListener onAddButtonClickedListener = pack -> {
         /*
         if(interstitialAd.isLoaded()){
             interstitialAd.show();

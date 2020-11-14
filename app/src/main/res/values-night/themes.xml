@@ -8,8 +8,7 @@
         <item name="colorSecondary">@color/cyan_200</item>
         <item name="colorSecondaryVariant">@color/cyan_500</item>
         <item name="android:colorBackground">@color/black_900</item>
-        <item name="colorSurface">@color/blue_900</item>
-        <item name="colorOnPrimarySurface">@color/black_800</item>
+        <item name="colorSurface">@color/black_800</item>
         <item name="colorError">@color/red_200</item>
         <item name="colorOnPrimary">@color/black_900</item>
         <item name="colorOnSecondary">@color/black_900</item>
