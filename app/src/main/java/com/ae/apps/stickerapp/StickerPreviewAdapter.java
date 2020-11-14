@@ -87,12 +87,20 @@ public class StickerPreviewAdapter extends RecyclerView.Adapter<StickerPreviewVi
                 View dialogView = LayoutInflater.from(context).inflate(R.layout.sticker_dialog, null, false);
                 SimpleDraweeView simpleDraweeView = dialogView.findViewById(R.id.sticker_preview_in_dialog);
                 AdView mAdView = dialogView.findViewById(R.id.adView);
+                View closeButton = dialogView.findViewById(R.id.btnClose);
                 simpleDraweeView.setImageURI(stickerAssetUri);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setView(dialogView);
                 AlertDialog alertDialog = builder.create();
                 alertDialog.show();
+
+                closeButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertDialog.dismiss();
+                    }
+                });
 
                 mAdView.loadAd(new AdRequest.Builder().build());
             }
