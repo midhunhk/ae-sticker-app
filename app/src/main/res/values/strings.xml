@@ -32,4 +32,5 @@
     <string name="analytics_key_start_time">start_time</string>
     <string name="str_made_with">Made with ♡ from Canada</string>
     <string name="url_app_privacy_policy" translatable="false">https://github.com/midhunhk/ae-sticker-app/wiki/Privacy-Policy</string>
+    <string name="str_close">Close Dialog</string>
 </resources>

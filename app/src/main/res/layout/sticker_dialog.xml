@@ -6,6 +6,14 @@
     android:padding="5dp"
     android:orientation="vertical">
 
+    <ImageButton
+        android:id="@+id/btnClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        android:layout_gravity="end"
+        android:contentDescription="@string/str_close" />
+
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/sticker_preview_in_dialog"
         android:layout_gravity="center_horizontal"
