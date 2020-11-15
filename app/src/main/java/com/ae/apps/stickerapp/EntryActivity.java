@@ -50,8 +50,8 @@ public class EntryActivity extends BaseActivity implements InAppUpdateManager.In
         }*/
 
         // For Night mode
-        // AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+        // AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 
         // For toolbar
         Toolbar toolbar = findViewById(R.id.app_toolbar);
