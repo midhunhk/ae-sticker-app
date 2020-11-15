@@ -17,7 +17,7 @@
             android:id="@+id/tray_icon"
             style="@style/InfoButtonStyle"
             android:textColor="#B9B9B9"
-            app:drawableTint="@color/black_800"
+            app:drawableTint="?attr/colorSecondaryVariant"
             tools:drawableLeft="@drawable/sticker_3rdparty_web"
             tools:drawableStart="@drawable/sticker_3rdparty_web"
             android:clickable="false"
@@ -26,21 +26,21 @@
         <TextView
             android:id="@+id/view_webpage"
             style="@style/InfoButtonStyle"
-            app:drawableTint="@color/black_800"
+            app:drawableTint="?attr/colorSecondaryVariant"
             android:drawableStart="@drawable/sticker_3rdparty_web"
             android:text="@string/view_webpage" />
 
         <TextView
             android:id="@+id/send_email"
             style="@style/InfoButtonStyle"
-            app:drawableTint="@color/black_800"
+            app:drawableTint="?attr/colorSecondaryVariant"
             android:drawableStart="@drawable/sticker_3rdparty_email"
             android:text="@string/send_email" />
 
         <TextView
             android:id="@+id/privacy_policy"
             style="@style/InfoButtonStyle"
-            app:drawableTint="@color/black_800"
+            app:drawableTint="?attr/colorSecondaryVariant"
             android:drawableStart="@drawable/sticker_3rdparty_privacy"
             android:text="@string/privacy_policy" />
     </LinearLayout>

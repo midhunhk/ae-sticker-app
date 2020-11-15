@@ -12,7 +12,7 @@
         <item name="colorPrimaryVariant">@color/pink_700</item>
         <item name="colorSecondary">@color/cyan_200</item>
         <item name="colorSecondaryVariant">@color/cyan_500</item>
-
+        <item name="android:windowBackground">?attr/colorSurface</item>
         <!--text fields.-->
         <item name="android:colorBackground">@color/white_50</item>
         <item name="colorSurface">@color/white_50</item>

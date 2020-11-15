@@ -36,6 +36,6 @@
         android:foregroundGravity="center"
         android:minHeight="60dp"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/google_admob_ad_unit_id"/>
+        ads:adUnitId="@string/google_admob_dialog_ad_id"/>
 
 </LinearLayout>

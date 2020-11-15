@@ -23,7 +23,7 @@
     <!--Color on secondary (light), color on background (light),-->
     <!--color on surface (light)-->
     <color name="black_900">#000000</color>
-
+    <color name="dark_grey">#121212</color>
     <color name="inactiveAddButtonColor">#B3B3B3</color>
 
 </resources>

@@ -18,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ae.apps.stickerapp.analytics.Analytics;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -33,7 +34,7 @@ public class StickerPreviewAdapter extends RecyclerView.Adapter<StickerPreviewVi
     private int cellLimit;
     private int cellPadding;
     private final int errorResource;
-
+    private Analytics analytics;
     private final LayoutInflater layoutInflater;
 
     StickerPreviewAdapter(
@@ -53,6 +54,7 @@ public class StickerPreviewAdapter extends RecyclerView.Adapter<StickerPreviewVi
 
         MobileAds.initialize(context, initializationStatus -> {
         });
+        analytics = Analytics.getInstance(context);
     }
 
     @NonNull
@@ -73,16 +75,13 @@ public class StickerPreviewAdapter extends RecyclerView.Adapter<StickerPreviewVi
     @Override
     public void onBindViewHolder(@NonNull final StickerPreviewViewHolder stickerPreviewViewHolder, final int i) {
         stickerPreviewViewHolder.stickerPreviewView.setImageResource(errorResource);
-        final Uri stickerAssetUri = StickerPackLoader.getStickerAssetUri(stickerPack.identifier, stickerPack.getStickers().get(i).imageFileName);
+        final String stickerFileName = stickerPack.getStickers().get(i).imageFileName;
+        final Uri stickerAssetUri = StickerPackLoader.getStickerAssetUri(stickerPack.identifier, stickerFileName);
         stickerPreviewViewHolder.stickerPreviewView.setImageURI(stickerAssetUri);
         stickerPreviewViewHolder.stickerPreviewView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Toast.makeText(context, "" + stickerAssetUri.toString(), Toast.LENGTH_SHORT).show();
-
- /*               final StickerDialog stickerDialog = new StickerDialog(context);
-                stickerDialog.setStickerAsset(stickerAssetUri);
-                stickerDialog.show();*/
+                analytics.logEvent(Analytics.VIEW_ITEM, "icon_preview", stickerPack.name);
 
                 View dialogView = LayoutInflater.from(context).inflate(R.layout.sticker_dialog, null, false);
                 SimpleDraweeView simpleDraweeView = dialogView.findViewById(R.id.sticker_preview_in_dialog);

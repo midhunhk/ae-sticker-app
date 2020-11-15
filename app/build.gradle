@@ -15,7 +15,7 @@ android {
         applicationId "com.ae.apps.stickerapp"
         minSdkVersion 18
         targetSdkVersion 30
-        versionCode 16
+        versionCode 17
         versionName "1.7.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def contentProviderAuthority = applicationId + ".stickercontentprovider"
