@@ -18,17 +18,6 @@
     <string name="title_validation_error">Error with the pack</string>
     <string name="info_screen_tray_icon">Tray icon</string>
     <string name="details_pack_already_added">Sticker pack added to WhatsApp</string>
-
-    <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
-    <!-- Sample Banner Ad ID: ca-app-pub-3940256099942544/6300978111 -->
-    <!-- Sample Interstitial Ad ID: ca-app-pub-3940256099942544/1033173712 -->
-
-    <!-- To be replaced with real ids when generating release build -->
-    <string name="google_admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="google_admob_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="google_admob_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="google_admob_dialog_ad_id">ca-app-pub-3940256099942544/6300978111</string>
-
     <string name="analytics_key_app_version">app_version</string>
     <string name="analytics_key_start_time">start_time</string>
     <string name="str_made_with">Made with ♡ from Canada</string>

@@ -99,10 +99,10 @@ task checkRelease {
     doLast {
         println("checkRelease")
         if (checkStringsValue('google_admob_app_id') == "ca-app-pub-3940256099942544~3347511713") {
-            throw new GradleException("Admob default config found. Replace the google_admob_app_id value in strings.xml")
+            throw new GradleException("Admob default config found. Replace the google_admob_app_id value in admob.xml")
         }
         if (checkStringsValue('google_admob_ad_unit_id') == "ca-app-pub-3940256099942544/6300978111") {
-            throw new GradleException("Admob default config found. Replace the google_admob_app_id value in strings.xml")
+            throw new GradleException("Admob default config found. Replace the google_admob_app_id value in admob.xml")
         }
     }
 }
