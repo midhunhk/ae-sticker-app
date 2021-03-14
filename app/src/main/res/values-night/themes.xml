@@ -11,12 +11,13 @@
         <item name="android:windowBackground">?attr/colorSurface</item>
         <item name="android:colorBackground">@color/black_900</item>
 
-        <item name="colorSurface">@color/dark_grey</item>
+        <item name="colorSurface">@color/color_charcoal</item>
         <item name="colorError">@color/red_200</item>
         <item name="colorOnPrimary">@color/black_900</item>
         <item name="colorOnSecondary">@color/black_900</item>
         <item name="colorOnBackground">@color/white_50</item>
         <item name="colorOnSurface">@color/white_50</item>
         <item name="colorOnError">@color/black_900</item>
+
     </style>
 </resources>

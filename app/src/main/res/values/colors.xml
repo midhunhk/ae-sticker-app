@@ -24,6 +24,9 @@
     <!--color on surface (light)-->
     <color name="black_900">#000000</color>
     <color name="dark_grey">#121212</color>
+    <color name="color_matterhorn_brown">#535353</color>
+    <color name="color_alabaster_white">#f9f9f9</color>
+    <color name="color_charcoal">#222222</color>
     <color name="inactiveAddButtonColor">#B3B3B3</color>
 
 </resources>
