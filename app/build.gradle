@@ -68,13 +68,13 @@ android {
 
 }
 
-def build_param = "${build}";
+def build_param = "${build}"
 
 if (build_param != "dev") {
     //exclude production build
     android.variantFilter { variant ->
         if (variant.buildType.name.equals('dev')) {
-            variant.setIgnore(true);
+            variant.setIgnore(true)
         }
     }
 
@@ -82,7 +82,7 @@ if (build_param != "dev") {
     //exclude all except production build
     android.variantFilter { variant ->
         if (!variant.buildType.name.equals('dev')) {
-            variant.setIgnore(true);
+            variant.setIgnore(true)
         }
     }
 }
@@ -119,10 +119,10 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
-    implementation 'com.google.android.material:material:1.2.1'
-    implementation 'com.google.android.gms:play-services-ads:19.5.0'
-    implementation 'com.google.firebase:firebase-core:18.0.0'
-    implementation 'com.google.android.play:core:1.8.3'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'com.google.android.gms:play-services-ads:19.7.0'
+    implementation 'com.google.firebase:firebase-core:18.0.2'
+    implementation 'com.google.android.play:core:1.10.0'
 
     def fresco_version = '2.2.0'
     implementation "com.facebook.fresco:fresco:$fresco_version"
