@@ -4,4 +4,5 @@
     <style name="Theme.StickersApp" parent="Base.Theme.StickersApp">
         <item name="android:windowLightStatusBar">false</item>
     </style>
+
 </resources>

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="Theme.StickersApp" parent="Base.Theme.StickersApp"/>
+
     <!--Top level DayNight theme to be used in AndroidManifest.xml-->
-    <style name="Theme.StickersApp" parent="Base.Theme.StickersApp">
+    <style name="Base.Theme.StickersApp" parent="Base.Theme.MaterialThemeBuilder">
         <!--Material color attributes (dark theme) -->
         <item name="colorPrimary">@color/pink_200</item>
         <item name="colorPrimaryVariant">@color/pink_600</item>
