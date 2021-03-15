@@ -108,7 +108,7 @@ task checkRelease {
 }
 
 def checkStringsValue(keyName) {
-    def stringsFile = android.sourceSets.main.res.sourceFiles.find { it.name.equals 'strings.xml' }
+    def stringsFile = android.sourceSets.main.res.sourceFiles.find { it.name.equals 'admob.xml' }
     return new XmlParser().parse(stringsFile).string.find { it.@name.equals keyName }.text()
 }
 
