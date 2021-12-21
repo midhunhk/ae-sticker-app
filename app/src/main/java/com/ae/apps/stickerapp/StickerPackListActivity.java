@@ -22,7 +22,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -57,32 +56,42 @@ public class StickerPackListActivity extends BaseActivity {
         setContentView(R.layout.activity_sticker_pack_list);
 
         packRecyclerView = findViewById(R.id.sticker_pack_list);
-        Toolbar myToolbar = findViewById(R.id.app_toolbar);
         stickerPackList = getIntent().getParcelableArrayListExtra(EXTRA_STICKER_PACK_LIST_DATA);
         showStickerPackList(stickerPackList);
 
         initAd();
-
-        // https://developers.google.com/admob/android/interstitial
-        // interstitialAd = adResources.getInterstitial(this);
-        // interstitialAd.loadAd(new AdRequest.Builder().build());
-
-        Analytics.getInstance(this).logAppStart();
-
-        AppReview.getInstance().init(this);
+        initAnalytics();
+        initAppReview();
 
         setToolBar();
     }
 
-
     private void initAd() {
-        MobileAds.initialize(this, initializationStatus -> {
-        });
-        AdView mAdView = findViewById(R.id.adView);
-        // AdResources adResources = new AdResources();
+        MobileAds.initialize(this, initializationStatus -> { });
 
+        // Find and load the adView on this screen
         // https://developers.google.com/admob/android/banner
+        AdView mAdView = findViewById(R.id.adView);
         mAdView.loadAd(new AdRequest.Builder().build());
+
+        // Disabling the Interstitial ads for now, as it doesn't provide very good
+        // user experience, but keeping the code here for reference implementation
+        //
+        // Interstitial ads are setup here on load, and displayed when the user has made a
+        // meaningful interaction on the screen like 'selected a card pack to view the details'
+        
+        // AdResources adResources = new AdResources();
+        // https://developers.google.com/admob/android/interstitial
+        // interstitialAd = adResources.getInterstitial(this);
+        // interstitialAd.loadAd(new AdRequest.Builder().build());
+    }
+
+    private void initAnalytics() {
+        Analytics.getInstance(this).logAppStart();
+    }
+
+    private void initAppReview() {
+        AppReview.getInstance().init(this);
     }
 
     @Override
