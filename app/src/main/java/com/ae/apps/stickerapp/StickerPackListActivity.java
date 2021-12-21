@@ -79,7 +79,7 @@ public class StickerPackListActivity extends BaseActivity {
         //
         // Interstitial ads are setup here on load, and displayed when the user has made a
         // meaningful interaction on the screen like 'selected a card pack to view the details'
-        
+
         // AdResources adResources = new AdResources();
         // https://developers.google.com/admob/android/interstitial
         // interstitialAd = adResources.getInterstitial(this);
