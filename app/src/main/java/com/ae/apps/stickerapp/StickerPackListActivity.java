@@ -36,7 +36,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class StickerPackListActivity extends BaseActivity {
+public class StickerPackListActivity extends AddStickerPackActivity {
     public static final String EXTRA_STICKER_PACK_LIST_DATA = "sticker_pack_list";
     private static final int STICKER_PREVIEW_DISPLAY_LIMIT = 5;
     private static final String TAG = "StickerPackList";
@@ -58,6 +58,9 @@ public class StickerPackListActivity extends BaseActivity {
         packRecyclerView = findViewById(R.id.sticker_pack_list);
         stickerPackList = getIntent().getParcelableArrayListExtra(EXTRA_STICKER_PACK_LIST_DATA);
         showStickerPackList(stickerPackList);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(getResources().getQuantityString(R.plurals.title_activity_sticker_packs_list, stickerPackList.size()));
+        }
 
         initAd();
         initAnalytics();
@@ -161,26 +164,7 @@ public class StickerPackListActivity extends BaseActivity {
     }
      */
 
-    private final StickerPackListAdapter.OnAddButtonClickedListener onAddButtonClickedListener = pack -> {
-        /*
-        if(interstitialAd.isLoaded()){
-            interstitialAd.show();
-        } else {
-            Toast.makeText(this, "Ad not loaded", Toast.LENGTH_SHORT).show();
-        }
-        */
-
-        Intent intent = new Intent();
-        intent.setAction(INTENT_ACTION_ENABLE_STICKER_PACK);
-        intent.putExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_ID, pack.identifier);
-        intent.putExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_AUTHORITY, BuildConfig.CONTENT_PROVIDER_AUTHORITY);
-        intent.putExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_NAME, pack.name);
-        try {
-            startActivityForResult(intent, StickerPackDetailsActivity.ADD_PACK);
-        } catch (ActivityNotFoundException e) {
-            Toast.makeText(StickerPackListActivity.this, R.string.error_adding_sticker_pack, Toast.LENGTH_LONG).show();
-        }
-    };
+    private final StickerPackListAdapter.OnAddButtonClickedListener onAddButtonClickedListener = pack -> addStickerPackToWhatsApp(pack.identifier, pack.name);
 
     private void recalculateColumnCount() {
         final int previewSize = getResources().getDimensionPixelSize(R.dimen.sticker_pack_list_item_preview_image_size);
@@ -192,24 +176,6 @@ public class StickerPackListActivity extends BaseActivity {
             allStickerPacksListAdapter.setMaxNumberOfStickersInARow(numColumns);
         }
     }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == StickerPackDetailsActivity.ADD_PACK) {
-            if (resultCode == Activity.RESULT_CANCELED && data != null) {
-                final String validationError = data.getStringExtra("validation_error");
-                if (validationError != null) {
-                    if (BuildConfig.DEBUG) {
-                        //validation error should be shown to developer only, not users.
-                        MessageDialogFragment.newInstance(R.string.title_validation_error, validationError).show(getSupportFragmentManager(), "validation error");
-                    }
-                    Log.e(TAG, "Validation failed:" + validationError);
-                }
-            }
-        }
-    }
-
 
     static class WhiteListCheckAsyncTask extends AsyncTask<List<StickerPack>, Void, List<StickerPack>> {
         private final WeakReference<StickerPackListActivity> stickerPackListActivityWeakReference;

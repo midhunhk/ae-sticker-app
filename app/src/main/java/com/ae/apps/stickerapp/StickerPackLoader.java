@@ -25,6 +25,7 @@ import java.util.HashSet;
 import java.util.List;
 
 import static com.ae.apps.stickerapp.StickerContentProvider.ANDROID_APP_DOWNLOAD_LINK_IN_QUERY;
+import static com.ae.apps.stickerapp.StickerContentProvider.ANIMATED_STICKER_PACK;
 import static com.ae.apps.stickerapp.StickerContentProvider.IOS_APP_DOWNLOAD_LINK_IN_QUERY;
 import static com.ae.apps.stickerapp.StickerContentProvider.LICENSE_AGREENMENT_WEBSITE;
 import static com.ae.apps.stickerapp.StickerContentProvider.PRIVACY_POLICY_WEBSITE;
@@ -106,7 +107,8 @@ class StickerPackLoader {
             final String licenseAgreementWebsite = cursor.getString(cursor.getColumnIndexOrThrow(LICENSE_AGREENMENT_WEBSITE));
             final String imageDataVersion = cursor.getString(cursor.getColumnIndexOrThrow(IMAGE_DATA_VERSION));
             final boolean avoidCache = cursor.getShort(cursor.getColumnIndexOrThrow(AVOID_CACHE)) > 0;
-            final StickerPack stickerPack = new StickerPack(identifier, name, publisher, trayImage, publisherEmail, publisherWebsite, privacyPolicyWebsite, licenseAgreementWebsite, imageDataVersion, avoidCache);
+            final boolean animatedStickerPack = cursor.getShort(cursor.getColumnIndexOrThrow(ANIMATED_STICKER_PACK)) > 0;
+            final StickerPack stickerPack = new StickerPack(identifier, name, publisher, trayImage, publisherEmail, publisherWebsite, privacyPolicyWebsite, licenseAgreementWebsite, imageDataVersion, avoidCache, animatedStickerPack);
             stickerPack.setAndroidPlayStoreLink(androidPlayStoreLink);
             stickerPack.setIosAppStoreLink(iosAppLink);
             stickerPackList.add(stickerPack);
