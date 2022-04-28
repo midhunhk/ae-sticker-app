@@ -205,6 +205,29 @@
           "image_file": "08.webp"
         }
       ]
+    },
+    {
+      "identifier": "9",
+      "name": "Together While Apart",
+      "publisher": "World Health Organization",
+      "tray_image_file": "01.png",
+      "image_data_version": "1",
+      "avoid_cache": false,
+      "publisher_email": "",
+      "publisher_website": "",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "animated_sticker_pack": true,
+      "stickers": [
+        {
+          "image_file": "03_Heart.webp",
+          "emojis": [
+            "❤️",
+            "🥰",
+            "💕"
+          ]
+        }
+      ]
     }
 
   ]
