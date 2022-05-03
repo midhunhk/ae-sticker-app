@@ -30,6 +30,7 @@
         android:id="@+id/sticker_pack_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -42,22 +43,12 @@
             android:textSize="16sp"
             tools:text="Pusheen" />
 
-        <ImageView
-            android:id="@+id/sticker_pack_animation_indicator"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:src="@drawable/animated_pack_indicator"
-            app:tint="@color/animatedStickerIndicator"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
-            android:contentDescription="@string/sticker_pack_animation_indicator" />
-
         <TextView
             android:id="@+id/sticker_pack_publisher"
             style="@style/sticker_packs_list_item_author_style"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="8dp"
             android:visibility="gone"
             tools:text="petellison" />
 
