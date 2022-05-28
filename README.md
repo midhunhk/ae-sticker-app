@@ -1,7 +1,7 @@
 # ae-sticker-app
 <img src="https://github.com/midhunhk/artwork/blob/master/Stickers/00_app_icon/exp/feature_graphic.png" alt="ae sticker app" />
 
-[![Build Status](https://travis-ci.org/midhunhk/ae-sticker-app.svg?branch=master)](https://travis-ci.org/midhunhk/ae-sticker-app) 
+[![Build Status](https://travis-ci.com/midhunhk/ae-sticker-app.svg?branch=main)](https://travis-ci.com/midhunhk/ae-sticker-app) 
 [![Release](https://img.shields.io/github/release/midhunhk/ae-sticker-app.svg)](https://github.com/midhunhk/ae-sticker-app/releases)
 [![](https://img.shields.io/badge/wiki-FF9800.svg)](https://github.com/midhunhk/ae-sticker-app/wiki) 
 [![Issues](https://img.shields.io/github/issues/midhunhk/ae-sticker-app.svg)](https://github.com/midhunhk/ae-sticker-app/issues)  
