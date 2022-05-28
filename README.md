@@ -27,6 +27,20 @@ Open the project in Android Studio
 ```
 Note: Either disable Firebase integration or place your 'google-services.json' under the `app` folder.
 
+## Build symbols
+
+Go to [YOUR_PROJECT]\build\app\intermediates\merged_native_libs\release\out\lib
+note that exist 3 folders inside
+
+arm64-v8a
+armeabi-v7a
+x86_64
+Select this 3 folder and create a .ZIP file. 
+
+Upload this new *.ZIP file as Symbol File.
+
+https://support.google.com/googleplay/android-developer/answer/9848633?hl=en
+
 ## Play Store
 
 <a href="https://play.google.com/store/apps/details?id=com.ae.apps.stickerapp">
