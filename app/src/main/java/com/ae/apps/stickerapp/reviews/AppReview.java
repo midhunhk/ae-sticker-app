@@ -12,7 +12,7 @@ import com.google.android.play.core.tasks.Task;
 /**
  * App class that manages when to trigger the In-App Review flow
  *
- * https://developer.android.com/guide/playcore/in-app-review/kotlin-java
+ * <a href="https://developer.android.com/guide/playcore/in-app-review/kotlin-java">...</a>
  */
 public class AppReview {
 
