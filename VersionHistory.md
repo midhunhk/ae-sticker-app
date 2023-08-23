@@ -1,5 +1,9 @@
 ## Ae Stickers App Changelog
 
+### Version 1.8.0 [Aug 2023]
+ - Update Target version
+ - Update dependencies
+
 ### Version 1.7.0 [Nov 2020]
  - Layout improvements
  - Option to see larger icon

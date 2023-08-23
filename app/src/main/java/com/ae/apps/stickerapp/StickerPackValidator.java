@@ -19,6 +19,7 @@ import android.webkit.URLUtil;
 import androidx.annotation.NonNull;
 
 import com.facebook.animated.webp.WebPImage;
+import com.facebook.imagepipeline.common.ImageDecodeOptions;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -136,7 +137,7 @@ class StickerPackValidator {
                 throw new IllegalStateException("sticker should be less than " + STICKER_FILE_SIZE_LIMIT_KB + "KB, sticker pack identifier:" + identifier + ", filename:" + fileName);
             }
             try {
-                final WebPImage webPImage = WebPImage.createFromByteArray(bytes);
+                final WebPImage webPImage = WebPImage.createFromByteArray(bytes, ImageDecodeOptions.defaults());
                 if (webPImage.getHeight() != IMAGE_HEIGHT) {
                     throw new IllegalStateException("sticker height should be " + IMAGE_HEIGHT + ", sticker pack identifier:" + identifier + ", filename:" + fileName);
                 }

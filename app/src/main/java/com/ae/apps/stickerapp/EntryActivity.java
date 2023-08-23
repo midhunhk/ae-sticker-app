@@ -41,8 +41,9 @@ public class EntryActivity extends BaseActivity implements InAppUpdateManager.In
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fresco.initialize(this);
         setContentView(R.layout.activity_entry);
+
+        Fresco.initialize(this);
         overridePendingTransition(0, 0);
         /*
         if (getSupportActionBar() != null) {

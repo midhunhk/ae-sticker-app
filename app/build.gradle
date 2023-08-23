@@ -1,22 +1,19 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
     //the compression of webp file during build causes problem with FileDescriptor in ContentProvider.
-    aaptOptions {
-        noCompress "webp"
-    }
-    
-    // Note to Self:
-    // Update .travis.yml to ensure build stability whenever platform version is upgraded
-    compileSdkVersion 30
-    buildToolsVersion = '29.0.3'
+
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.ae.apps.stickerapp"
-        minSdkVersion 18
-        targetSdkVersion 30
-        versionCode 18
-        versionName "1.7.1"
+        minSdkVersion 19
+        //noinspection OldTargetApi
+        targetSdkVersion 33
+        versionCode 21
+        versionName "1.9.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def contentProviderAuthority = applicationId + ".stickercontentprovider"
         // Creates a placeholder property to use in the manifest.
@@ -46,11 +43,8 @@ android {
         }
     }
 
-    lintOptions {
-        abortOnError false
-    }
 
-    applicationVariants.all { variant ->
+    applicationVariants.configureEach { variant ->
         variant.outputs.all { output ->
             outputFileName = "aeStickersApp-${variant.versionName}-${variant.name}-${variant.versionCode}.apk"
         }
@@ -60,10 +54,18 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     packagingOptions {
-        exclude 'lib/*/libnative-imagetranscoder.so'
-        exclude 'lib/*/libnative-filters.so'
+        jniLibs {
+            excludes += ['lib/*/libnative-imagetranscoder.so', 'lib/*/libnative-filters.so']
+        }
+    }
+
+    namespace 'com.ae.apps.stickerapp'
+    androidResources {
+        noCompress 'webp'
+    }
+    lint {
+        abortOnError false
     }
 
 }
@@ -87,7 +89,7 @@ if (build_param != "dev") {
     }
 }
 
-tasks.whenTaskAdded { task ->
+tasks.configureEach { task ->
     println(task.name)
     if (task.name.contains("assembleRelease")) {
         task.dependsOn checkRelease
@@ -95,7 +97,7 @@ tasks.whenTaskAdded { task ->
 }
 
 // Check if we are using the default ad mob configuration when creating the release build
-task checkRelease {
+tasks.register('checkRelease') {
     doLast {
         println("checkRelease")
         if (checkStringsValue('google_admob_app_id') == "ca-app-pub-3940256099942544~3347511713") {
@@ -114,23 +116,24 @@ def checkStringsValue(keyName) {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.recyclerview:recyclerview:1.3.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'com.google.android.gms:play-services-ads:19.7.0'
-    implementation 'com.google.firebase:firebase-core:18.0.2'
-    implementation 'com.google.android.play:core:1.10.0'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'com.google.android.gms:play-services-ads:21.5.0'
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    implementation 'com.google.android.play:core:1.10.3'
+    implementation 'androidx.core:core-ktx:1.10.1'
 
-    def fresco_version = '2.2.0'
+    def fresco_version = '3.0.0'
     implementation "com.facebook.fresco:fresco:$fresco_version"
     implementation "com.facebook.fresco:webpsupport:$fresco_version"
     implementation "com.facebook.fresco:animated-webp:$fresco_version"
     implementation "com.facebook.fresco:animated-base:$fresco_version"
 
-    implementation 'eu.dkaratzas:android-inapp-update:1.0.5'
+    //implementation 'eu.dkaratzas:android-inapp-update:1.0.2'
+    implementation 'com.github.dnKaratzas:android-inapp-update:1.0.2'
 }
 
-apply plugin: 'com.google.gms.google-services'
