@@ -1,6 +1,9 @@
 ## Ae Stickers App Changelog
 
-### Version 1.8.0 [Aug 2023]
+### Version 1.9.1 [Sep 2023]
+- Migrate play-services-ads to v22 #18
+
+### Version 1.9.0 [Aug 2023]
  - Update Target version
  - Update dependencies
 
