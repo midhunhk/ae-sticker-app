@@ -13,7 +13,7 @@ android {
         //noinspection OldTargetApi
         targetSdkVersion 34
         versionCode 22
-        versionName "1.9.1"
+        versionName "1.10.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def contentProviderAuthority = applicationId + ".stickercontentprovider"
         // Creates a placeholder property to use in the manifest.
@@ -67,6 +67,9 @@ android {
     lint {
         abortOnError false
     }
+    buildFeatures {
+        buildConfig true
+    }
 
 }
 
@@ -118,11 +121,11 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'androidx.recyclerview:recyclerview:1.3.1'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
-    implementation 'com.google.android.material:material:1.9.0'
-    implementation 'com.google.android.gms:play-services-ads:22.3.0'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'com.google.android.gms:play-services-ads:22.6.0'
     implementation 'com.google.firebase:firebase-core:21.1.1'
     implementation 'com.google.android.play:core:1.10.3'
     implementation 'androidx.core:core-ktx:1.12.0'
@@ -133,7 +136,6 @@ dependencies {
     implementation "com.facebook.fresco:animated-webp:$fresco_version"
     implementation "com.facebook.fresco:animated-base:$fresco_version"
 
-    //implementation 'eu.dkaratzas:android-inapp-update:1.0.2'
     implementation 'com.github.dnKaratzas:android-inapp-update:1.0.2'
 }
 
