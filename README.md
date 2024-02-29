@@ -1,5 +1,5 @@
 # ae-sticker-app
-<img src="https://github.com/midhunhk/artwork/blob/master/Stickers/00_app_icon/exp/feature_graphic.png" alt="ae sticker app" />
+<img src="https://github.com/midhunhk/artwork/blob/master/apps/Stickers/00_app_icon/exp/feature_graphic.png" alt="ae sticker app" />
 
 [![Release](https://img.shields.io/github/release/midhunhk/ae-sticker-app.svg)](https://github.com/midhunhk/ae-sticker-app/releases)
 [![](https://img.shields.io/badge/wiki-FF9800.svg)](https://github.com/midhunhk/ae-sticker-app/wiki) 
@@ -9,7 +9,7 @@ An open source Android app that includes custom stickers for whatsapp brought to
 
 To know more about the sticker packs included, see [this](https://github.com/midhunhk/ae-sticker-app/wiki/Sticker-Packs)
 
-This project is based on: https://github.com/WhatsApp/stickers/tree/master/Android
+This project is based on: https://github.com/WhatsApp/stickers/tree/main/Android
 
 The source for the stickers are at available at: https://github.com/midhunhk/artwork/tree/master/Stickers/
 

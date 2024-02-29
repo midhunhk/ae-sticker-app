@@ -25,18 +25,21 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ae.apps.stickerapp.ads.AdLoadedCallback;
+import com.ae.apps.stickerapp.ads.AdResources;
 import com.ae.apps.stickerapp.analytics.Analytics;
 import com.ae.apps.stickerapp.reviews.AppReview;
+import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class StickerPackListActivity extends BaseActivity {
+public class StickerPackListActivity extends BaseActivity implements AdLoadedCallback {
     public static final String EXTRA_STICKER_PACK_LIST_DATA = "sticker_pack_list";
     private static final int STICKER_PREVIEW_DISPLAY_LIMIT = 5;
     private static final String TAG = "StickerPackList";
@@ -48,7 +51,11 @@ public class StickerPackListActivity extends BaseActivity {
     WhiteListCheckAsyncTask whiteListCheckAsyncTask;
     ArrayList<StickerPack> stickerPackList;
 
-    //private InterstitialAd interstitialAd;
+    private AdResources adResources;
+
+    private final boolean interstitialAdsEnabled = true;
+
+    private StickerPack selectedStickerPack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +74,7 @@ public class StickerPackListActivity extends BaseActivity {
     }
 
     private void initAd() {
+        // Initialize the Mobile Ads SDK.
         MobileAds.initialize(this, initializationStatus -> { });
 
         // Find and load the adView on this screen
@@ -76,14 +84,23 @@ public class StickerPackListActivity extends BaseActivity {
 
         // Disabling the Interstitial ads for now, as it doesn't provide very good
         // user experience, but keeping the code here for reference implementation
-        //
+
+        // https://developers.google.com/admob/android/interstitial
         // Interstitial ads are setup here on load, and displayed when the user has made a
         // meaningful interaction on the screen like 'selected a card pack to view the details'
+        // We are managing ads lifecycles and instances via AdResources
+        if(interstitialAdsEnabled) {
+            adResources = new AdResources();
+            adResources.initInterstitial(this, this);
+        }
+    }
 
-        // AdResources adResources = new AdResources();
-        // https://developers.google.com/admob/android/interstitial
-        // interstitialAd = adResources.getInterstitial(this);
-        // interstitialAd.loadAd(new AdRequest.Builder().build());
+    private void showInterstitialAd(){
+        // TODO Rather than showing the ad always upon invocation, add a backoff logic if
+        // we prefer not to show ads too frequently to the user
+        if(null != adResources ) {
+            adResources.showInterstitialAd(StickerPackListActivity.this);
+        }
     }
 
     private void initAnalytics() {
@@ -151,24 +168,23 @@ public class StickerPackListActivity extends BaseActivity {
         packRecyclerView.getViewTreeObserver().addOnGlobalLayoutListener(this::recalculateColumnCount);
     }
 
-    /*
-    private void setDividerForRecyclerView() {
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(
-                packRecyclerView.getContext(),
-                packLayoutManager.getOrientation()
-        );
-        packRecyclerView.addItemDecoration(dividerItemDecoration);
-    }
-     */
-
     private final StickerPackListAdapter.OnAddButtonClickedListener onAddButtonClickedListener = pack -> {
-        /*
-        if(interstitialAd.isLoaded()){
-            interstitialAd.show();
+        if(interstitialAdsEnabled) {
+            // Save this selected pack for later and show add to whatsapp once the ad is dismissed
+            selectedStickerPack = pack;
+            // Show an Interstitial Ad when the user clicks the Add Button
+            showInterstitialAd();
         } else {
-            Toast.makeText(this, "Ad not loaded", Toast.LENGTH_SHORT).show();
+            addStickerPack(pack);
         }
-        */
+
+    };
+
+    private void addStickerPack(StickerPack pack) {
+        // Guard clause
+        if(null == pack){
+            return;
+        }
 
         Intent intent = new Intent();
         intent.setAction(INTENT_ACTION_ENABLE_STICKER_PACK);
@@ -180,7 +196,7 @@ public class StickerPackListActivity extends BaseActivity {
         } catch (ActivityNotFoundException e) {
             Toast.makeText(StickerPackListActivity.this, R.string.error_adding_sticker_pack, Toast.LENGTH_LONG).show();
         }
-    };
+    }
 
     private void recalculateColumnCount() {
         final int previewSize = getResources().getDimensionPixelSize(R.dimen.sticker_pack_list_item_preview_image_size);
@@ -208,6 +224,16 @@ public class StickerPackListActivity extends BaseActivity {
                 }
             }
         }
+    }
+
+    @Override
+    public void onAdDismissedFullScreenContent() {
+        addStickerPack(selectedStickerPack);
+    }
+
+    @Override
+    public void onAdFailedToShowFullScreenContent(AdError error) {
+        addStickerPack(selectedStickerPack);
     }
 
 
