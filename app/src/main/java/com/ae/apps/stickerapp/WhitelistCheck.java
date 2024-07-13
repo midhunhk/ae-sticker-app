@@ -68,11 +68,7 @@ class WhitelistCheck {
         try {
             final ApplicationInfo applicationInfo = packageManager.getApplicationInfo(packageName, 0);
             //noinspection SimplifiableIfStatement
-            if (applicationInfo != null) {
-                return applicationInfo.enabled;
-            } else {
-                return false;
-            }
+            return applicationInfo.enabled;
         } catch (PackageManager.NameNotFoundException e) {
             return false;
         }

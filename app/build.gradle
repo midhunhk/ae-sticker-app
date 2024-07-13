@@ -9,10 +9,9 @@ android {
 
     defaultConfig {
         applicationId "com.ae.apps.stickerapp"
-        minSdkVersion 19
-        //noinspection OldTargetApi
+        minSdkVersion 21
         targetSdkVersion 34
-        versionCode 22
+        versionCode 23
         versionName "1.10.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def contentProviderAuthority = applicationId + ".stickercontentprovider"
@@ -51,8 +50,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     packagingOptions {
         jniLibs {
@@ -61,9 +60,7 @@ android {
     }
 
     namespace 'com.ae.apps.stickerapp'
-    androidResources {
-        noCompress 'webp'
-    }
+
     lint {
         abortOnError false
     }
@@ -78,7 +75,7 @@ def build_param = "${build}"
 if (build_param != "dev") {
     //exclude production build
     android.variantFilter { variant ->
-        if (variant.buildType.name.equals('dev')) {
+        if (variant.buildType.name == 'dev') {
             variant.setIgnore(true)
         }
     }
@@ -86,7 +83,7 @@ if (build_param != "dev") {
 } else {
     //exclude all except production build
     android.variantFilter { variant ->
-        if (!variant.buildType.name.equals('dev')) {
+        if (variant.buildType.name != 'dev') {
             variant.setIgnore(true)
         }
     }
@@ -119,23 +116,23 @@ def checkStringsValue(keyName) {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.recyclerview:recyclerview:1.3.2'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
-    implementation 'com.google.android.material:material:1.11.0'
-    implementation 'com.google.android.gms:play-services-ads:22.6.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation("com.google.android.gms:play-services-ads:23.2.0")
     implementation 'com.google.firebase:firebase-core:21.1.1'
-    implementation 'com.google.android.play:core:1.10.3'
-    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation("com.google.android.play:review:2.0.1")
+    implementation("com.google.android.play:app-update:2.1.0")
+    implementation "androidx.preference:preference:1.2.1"
 
-    def fresco_version = '3.0.0'
+    def fresco_version = '3.2.0'
     implementation "com.facebook.fresco:fresco:$fresco_version"
     implementation "com.facebook.fresco:webpsupport:$fresco_version"
     implementation "com.facebook.fresco:animated-webp:$fresco_version"
     implementation "com.facebook.fresco:animated-base:$fresco_version"
 
-    implementation 'com.github.dnKaratzas:android-inapp-update:1.0.2'
 }
 

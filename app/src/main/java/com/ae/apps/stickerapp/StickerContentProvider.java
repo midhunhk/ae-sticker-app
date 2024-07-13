@@ -129,20 +129,17 @@ public class StickerContentProvider extends ContentProvider {
     @Override
     public String getType(@NonNull Uri uri) {
         final int matchCode = MATCHER.match(uri);
-        switch (matchCode) {
-            case METADATA_CODE:
-                return "vnd.android.cursor.dir/vnd." + BuildConfig.CONTENT_PROVIDER_AUTHORITY + "." + METADATA;
-            case METADATA_CODE_FOR_SINGLE_PACK:
-                return "vnd.android.cursor.item/vnd." + BuildConfig.CONTENT_PROVIDER_AUTHORITY + "." + METADATA;
-            case STICKERS_CODE:
-                return "vnd.android.cursor.dir/vnd." + BuildConfig.CONTENT_PROVIDER_AUTHORITY + "." + STICKERS;
-            case STICKERS_ASSET_CODE:
-                return "image/webp";
-            case STICKER_PACK_TRAY_ICON_CODE:
-                return "image/png";
-            default:
-                throw new IllegalArgumentException("Unknown URI: " + uri);
-        }
+        return switch (matchCode) {
+            case METADATA_CODE ->
+                    "vnd.android.cursor.dir/vnd." + BuildConfig.CONTENT_PROVIDER_AUTHORITY + "." + METADATA;
+            case METADATA_CODE_FOR_SINGLE_PACK ->
+                    "vnd.android.cursor.item/vnd." + BuildConfig.CONTENT_PROVIDER_AUTHORITY + "." + METADATA;
+            case STICKERS_CODE ->
+                    "vnd.android.cursor.dir/vnd." + BuildConfig.CONTENT_PROVIDER_AUTHORITY + "." + STICKERS;
+            case STICKERS_ASSET_CODE -> "image/webp";
+            case STICKER_PACK_TRAY_ICON_CODE -> "image/png";
+            default -> throw new IllegalArgumentException("Unknown URI: " + uri);
+        };
     }
 
     private synchronized void readContentFile(@NonNull Context context) {

@@ -52,7 +52,7 @@ class ContentFileParser {
             }
         }
         reader.endObject();
-        if (stickerPackList.size() == 0) {
+        if (stickerPackList.isEmpty()) {
             throw new IllegalStateException("sticker pack list cannot be empty");
         }
         for (StickerPack stickerPack : stickerPackList) {
@@ -128,7 +128,7 @@ class ContentFileParser {
         if (TextUtils.isEmpty(trayImageFile)) {
             throw new IllegalStateException("tray_image_file cannot be empty");
         }
-        if (stickerList == null || stickerList.size() == 0) {
+        if (stickerList == null || stickerList.isEmpty()) {
             throw new IllegalStateException("sticker list is empty");
         }
         if (identifier.contains("..") || identifier.contains("/")) {
