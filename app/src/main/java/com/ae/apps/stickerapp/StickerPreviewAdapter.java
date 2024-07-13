@@ -27,14 +27,14 @@ import com.google.android.gms.ads.MobileAds;
 public class StickerPreviewAdapter extends RecyclerView.Adapter<StickerPreviewViewHolder> {
 
     @NonNull
-    private StickerPack stickerPack;
+    private final StickerPack stickerPack;
     @NonNull
     final Context context;
     private final int cellSize;
-    private int cellLimit;
-    private int cellPadding;
+    private final int cellLimit;
+    private final int cellPadding;
     private final int errorResource;
-    private Analytics analytics;
+    private final Analytics analytics;
     private final LayoutInflater layoutInflater;
 
     StickerPreviewAdapter(

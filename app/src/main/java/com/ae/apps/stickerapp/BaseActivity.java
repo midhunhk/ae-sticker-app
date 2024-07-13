@@ -40,6 +40,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         @NonNull
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
+            assert getArguments() != null;
             @StringRes final int title = getArguments().getInt(ARG_TITLE_ID);
             String message = getArguments().getString(ARG_MESSAGE);
 

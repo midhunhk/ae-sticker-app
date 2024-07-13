@@ -28,13 +28,13 @@ import java.util.List;
 
 public class StickerPackListAdapter extends RecyclerView.Adapter<StickerPackListItemViewHolder> {
     @NonNull
-    private List<StickerPack> stickerPacks;
+    private final List<StickerPack> stickerPacks;
     @NonNull
     private final OnAddButtonClickedListener onAddButtonClickedListener;
     private int maxNumberOfStickersInARow;
     //private InterstitialAd interstitialAd;
     //private AdResources adResources;
-    private Analytics analytics;
+    private final Analytics analytics;
 
     StickerPackListAdapter(@NonNull List<StickerPack> stickerPacks,
                            @NonNull OnAddButtonClickedListener onAddButtonClickedListener,

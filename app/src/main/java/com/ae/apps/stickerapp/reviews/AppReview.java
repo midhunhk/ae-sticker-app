@@ -2,17 +2,16 @@ package com.ae.apps.stickerapp.reviews;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 
 import com.google.android.play.core.review.ReviewInfo;
 import com.google.android.play.core.review.ReviewManager;
 import com.google.android.play.core.review.ReviewManagerFactory;
-import com.google.android.play.core.tasks.Task;
+import com.google.android.gms.tasks.Task;
 
 /**
  * App class that manages when to trigger the In-App Review flow
- *
- * <a href="https://developer.android.com/guide/playcore/in-app-review/kotlin-java">...</a>
+ * <a href="https://developer.android.com/guide/playcore/in-app-review/kotlin-java">InAppReview</a>
  */
 public class AppReview {
 
