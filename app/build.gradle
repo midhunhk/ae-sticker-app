@@ -10,8 +10,8 @@ android {
         applicationId "com.ae.apps.stickerapp"
         minSdkVersion 23
         targetSdkVersion 36
-        versionCode 24
-        versionName "1.10.1"
+        versionCode 25
+        versionName "1.11.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def contentProviderAuthority = applicationId + ".stickercontentprovider"
         // Creates a placeholder property to use in the manifest.
@@ -121,13 +121,17 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
 
     implementation 'com.google.android.material:material:1.12.0'
-    implementation("com.google.android.gms:play-services-ads:24.4.0")
+    implementation("com.google.android.gms:play-services-ads:24.5.0")
     implementation 'com.google.firebase:firebase-core:21.1.1'
-    implementation("com.google.android.play:review:2.0.1")
+    implementation("com.google.android.play:review:2.0.2")
     implementation("com.google.android.play:app-update:2.1.0")
     implementation "androidx.preference:preference:1.2.1"
 
-    def fresco_version = '3.2.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.13.4'
+    testImplementation 'org.mockito:mockito-core:5.19.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.19.0'
+
+    def fresco_version = '3.6.0'
     implementation "com.facebook.fresco:fresco:$fresco_version"
     implementation "com.facebook.fresco:webpsupport:$fresco_version"
     implementation "com.facebook.fresco:animated-webp:$fresco_version"

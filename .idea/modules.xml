@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ae-sticker-app.iml" filepath="$PROJECT_DIR$/.idea/modules/ae-sticker-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ae-sticker-app.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ae-sticker-app.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ae-sticker-app.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ae-sticker-app.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ae-sticker-app.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ae-sticker-app.app.main.iml" />
