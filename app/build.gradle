@@ -3,8 +3,6 @@ apply plugin: 'com.google.gms.google-services'
 apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
-    //the compression of webp file during build causes problem with FileDescriptor in ContentProvider.
-    compileSdk 36
 
     defaultConfig {
         applicationId "com.ae.apps.stickerapp"
