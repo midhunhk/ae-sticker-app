@@ -1,7 +1,20 @@
 ## Ae Stickers App Changelog
 
+### Version 1.11.0 [Sep 2025]
+ - Upgrade play-services-ads to 24.5.0
+ - Upgrade gradle plugin to 8.14
+ - Support 16kb page size #25
+
+### Version 1.10.1 [Jul 2025]
+ - Upgrade play-services-ads to 24.4.0
+
+### Version 1.10.0 [Jul 2024]
+ - Upgrade play-services to 23.2.0 #22
+ - Remove in-app update library #20
+ - Upgrade gradle plugin to 8.7
+
 ### Version 1.9.1 [Sep 2023]
-- Migrate play-services-ads to v22 #18
+ - Migrate play-services-ads to v22 #18
 
 ### Version 1.9.0 [Aug 2023]
  - Update Target version
@@ -46,7 +59,7 @@
 
 ### Version 1.1.0 [Dec 2018]
  - Interstitial Ads
- - Squaremojis
+ - Square-emojis
  - Updated Halloween Pumpkins
  - Holidays
 
