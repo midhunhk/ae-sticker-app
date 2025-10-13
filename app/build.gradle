@@ -10,7 +10,7 @@ android {
         minSdkVersion 23
         targetSdkVersion 36
         versionCode 25
-        versionName "1.11.0"
+        versionName "1.11.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def contentProviderAuthority = applicationId + ".stickercontentprovider"
         // Creates a placeholder property to use in the manifest.
@@ -26,17 +26,17 @@ android {
         debug {
             minifyEnabled false
             shrinkResources false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
             minifyEnabled true
             shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         dev {
             minifyEnabled true
             shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -119,16 +119,16 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
 
-    implementation 'com.google.android.material:material:1.12.0'
-    implementation("com.google.android.gms:play-services-ads:24.5.0")
+    implementation 'com.google.android.material:material:1.13.0'
+    implementation("com.google.android.gms:play-services-ads:24.7.0")
     implementation 'com.google.firebase:firebase-core:21.1.1'
     implementation("com.google.android.play:review:2.0.2")
     implementation("com.google.android.play:app-update:2.1.0")
     implementation "androidx.preference:preference:1.2.1"
 
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.13.4'
-    testImplementation 'org.mockito:mockito-core:5.19.0'
-    testImplementation 'org.mockito:mockito-junit-jupiter:5.19.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:6.0.0'
+    testImplementation 'org.mockito:mockito-core:5.20.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.20.0'
 
     def fresco_version = '3.6.0'
     implementation "com.facebook.fresco:fresco:$fresco_version"

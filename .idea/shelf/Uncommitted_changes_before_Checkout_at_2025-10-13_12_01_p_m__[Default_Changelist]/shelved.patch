@@ -1,0 +1,12 @@
+Index: .aistudio/instructions.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.aistudio/instructions.md b/.aistudio/instructions.md
+new file mode 100644
+--- /dev/null	(date 1760371211680)
++++ b/.aistudio/instructions.md	(date 1760371211680)
+@@ -0,0 +1,1 @@
++This is a good place for instructions for the Android Studio bot.
+\ No newline at end of file
