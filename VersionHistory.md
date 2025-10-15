@@ -1,7 +1,8 @@
 ## Ae Stickers App Changelog
 
 ### Version 1.11.1 [Oct 2025]
- - asd
+ - Disable Ads on Main screen
+ - Upgrade junit plugin versions
 
 ### Version 1.11.0 [Sep 2025]
  - Upgrade play-services-ads to 24.5.0
