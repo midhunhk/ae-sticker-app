@@ -33,7 +33,6 @@ import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -53,7 +52,7 @@ public class StickerPackListActivity extends BaseActivity implements AdLoadedCal
 
     private AdResources adResources;
 
-    private final boolean interstitialAdsEnabled = true;
+    private final boolean interstitialAdsEnabled = false;
 
     private StickerPack selectedStickerPack;
 
@@ -66,7 +65,10 @@ public class StickerPackListActivity extends BaseActivity implements AdLoadedCal
         stickerPackList = getIntent().getParcelableArrayListExtra(EXTRA_STICKER_PACK_LIST_DATA);
         showStickerPackList(stickerPackList);
 
-        initAd();
+        // Disabling ads on the main screen since Google Admob is complaining of
+        // 'More ads or paid promotional material than publisher-content'
+        // initAd();
+
         initAnalytics();
         initAppReview();
 
