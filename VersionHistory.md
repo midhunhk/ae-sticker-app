@@ -1,5 +1,8 @@
 ## Ae Stickers App Changelog
 
+### Version 1.11.2 [Nov 2025]
+- Disable All Ads, to please Google Policies
+
 ### Version 1.11.1 [Oct 2025]
  - Disable Ads on Main screen
  - Upgrade junit plugin versions
