@@ -76,6 +76,7 @@
         android:layout_height="wrap_content"
         android:foregroundGravity="center"
         android:minHeight="60dp"
+        android:visibility="gone"
         ads:adSize="BANNER"
         ads:adUnitId="@string/google_admob_ad_unit_id"/>
 
@@ -154,10 +155,10 @@
                 android:clickable="false"
                 android:drawablePadding="8dp"
                 android:textColor="@color/white_50"
-                android:drawableStart="@drawable/sticker_3rdparty_wa"
                 android:focusable="false"
                 android:foreground="@android:color/transparent"
-                android:text="@string/add_to_whatsapp" />
+                android:text="@string/add_to_whatsapp"
+                app:drawableStartCompat="@drawable/sticker_3rdparty_wa" />
         </FrameLayout>
     </FrameLayout>
 </LinearLayout>

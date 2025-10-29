@@ -99,7 +99,9 @@ public class StickerPackDetailsActivity extends BaseActivity {
             getSupportActionBar().setTitle(showUpButton ? R.string.title_activity_sticker_pack_details_multiple_pack : R.string.title_activity_sticker_pack_details_single_pack);
         }
 
-        initAd();
+        // Disabling ads for now since Google is still crying about
+        // 'More ads or paid promotional material than publisher-content'
+        // initAd();
 
         AppReview.getInstance().launchReviewFlow(this);
     }
