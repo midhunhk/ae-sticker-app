@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'org.jetbrains.kotlin.android'
 
-import groovy.xml.XmlParser
+import groovy.xml.XmlSlurper
 
 android {
     compileSdk 36
@@ -111,17 +111,15 @@ tasks.register('checkRelease') {
 
 def checkStringsValue(keyName) {
     def stringsFile = android.sourceSets.main.res.sourceFiles.find { it.name.equals 'admob.xml' }
-    return new XmlParser()
-            .parse(stringsFile)
-            .string
-            .find { it.@name.equals keyName }
-            .text()
+    def slurper = new XmlSlurper()
+    def parsed = slurper.parse(stringsFile)
+    def node = parsed.string.find { it.@name == keyName }
+    return node ? node.text() : null  // Handle null if key not found
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.7.1'
-    implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.recyclerview:recyclerview:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
 
@@ -143,4 +141,3 @@ dependencies {
     implementation "com.facebook.fresco:animated-base:$fresco_version"
 
 }
-
